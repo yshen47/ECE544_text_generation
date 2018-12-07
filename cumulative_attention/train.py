@@ -61,11 +61,15 @@ def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BA
                 f.write(str(validation_loss) + '\n')
             print(validation_loss)
 
+def run():
+    processes = []
+    for i in range(1):  # No. of processes
+        p = mp.Process(target=train, args=(model,))
+        p.start()
+        processes.append(p)
+    for p in processes: p.join()
 
+if __name__ == '__main__':
+    torch.multiprocessing.freeze_support()
+    run()
 
-processes = []
-for i in range(1): # No. of processes
-    p = mp.Process(target=train, args=(model,))
-    p.start()
-    processes.append(p)
-for p in processes: p.join()
