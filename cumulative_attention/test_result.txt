@@ -1,0 +1,52 @@
+Counted words:
+normal word 23830
+=================================
+keywords:  ['cropped', 'leather', 'jacket', 'hip', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+sentence:  ['SOS', 'this', "'80s-style", 'cropped', 'leather', 'jacket', 'is', 'just', 'the', 'thing', 'to', 'throw', 'on', 'for', 'hip', 'nights', 'out', 'EOS', 'Padding', 'Padding', 'Padding']
+generated sentence:  this cropped leather leather hip a leather jacket a a a a cropped EOS Padding Padding Padding Padding Padding Padding
+=================================
+=================================
+keywords:  ['handmade', 'piece', 'black', 'enamel', 'edgy', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+sentence:  ['SOS', 'this', 'handmade', 'piece', 'is', 'inlaid', 'with', 'black', 'enamel', 'for', 'an', 'edgy', 'finish', 'EOS', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+generated sentence:  this handmade piece is this piece black enamel enamel enamel enamel black EOS Padding Padding Padding Padding Padding Padding Padding
+=================================
+=================================
+keywords:  ['drop', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+sentence:  ['SOS', 'this', 'drop', 'pair', 'features', 'tonal', 'birchwood', 'and', 'is', 'punctuated', 'with', '2', 'EOS', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+generated sentence:  this drop style is this this with drop drop drop drop Padding Padding Padding Padding Padding Padding Padding Padding Padding
+=================================
+=================================
+keywords:  ['cutout', 'big', 'trend', 'season', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+sentence:  ['SOS', 'we', 'especially', 'love', 'its', 'cutout', 'shoulders', '-', 'a', 'big', 'trend', 'this', 'season', 'EOS', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+generated sentence:  cutout this cutout big big with this season this trend season trend trend Padding Padding Padding Padding Padding Padding Padding
+=================================
+=================================
+keywords:  ['black', 'nubuck', 'wooden', 'ring', 'top', 'free', 'Padding', 'Padding', 'Padding', 'Padding']
+sentence:  ['SOS', 'this', 'black', 'nubuck', 'design', 'has', 'wooden', 'ring', 'top', 'handles', 'and', 'is', 'free', 'from', 'embellishments', 'EOS', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+generated sentence:  this black black is this ring ring features features a free free free free Padding Padding Padding Padding Padding Padding
+=================================
+=================================
+keywords:  ['slouchy', 'cozy', 'top', 'city', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+sentence:  ['SOS', 'slouchy', 'and', 'carefree,', 'this', 'cozy', 'top', 'was', 'made', 'for', 'weekends', 'in', 'the', 'city', 'EOS', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+generated sentence:  this this cozy style with a slouchy a slouchy a slouchy city EOS Padding Padding Padding Padding Padding Padding Padding
+=================================
+=================================
+keywords:  ['sleek', 'wear', 'modern', 'vintage', 'pencil', 'skirt', 'Padding', 'Padding', 'Padding', 'Padding']
+sentence:  ['SOS', 'for', 'a', 'chic,', 'sleek', 'look', 'wear', 'this', 'modern', 'vintage', 'blouse', 'with', 'a', 'pencil', 'skirt', 'EOS', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+generated sentence:  wear this sleek style with a sleek sleek sleek sleek sleek skirt Padding Padding Padding Padding Padding Padding Padding Padding
+=================================
+=================================
+keywords:  ['delicate', 'gold-plated', 'silver', 'silver', 'necklace', 'crafted', 'flattering', 'point', 'Padding', 'Padding']
+sentence:  ['SOS', 'this', 'delicate', 'gold-plated', 'silver', 'necklace', 'has', 'been', 'crafted', 'by', 'hand', 'and', 'sits', 'at', 'a', 'flattering', 'point', 'below', 'the', 'collarbone', 'EOS']
+generated sentence:  this delicate gold-plated is crafted crafted from necklace necklace crafted necklace flattering delicate flattering flattering EOS Padding Padding Padding Padding
+=================================
+=================================
+keywords:  ['large', 'everyday', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+sentence:  ['SOS', 'designed', 'in', 'a', 'multitude', 'of', 'sizes,', 'this', 'version', 'is', 'large', 'enough', 'to', 'house', 'your', 'everyday', 'essentials', 'with', 'ease', 'EOS', 'Padding']
+generated sentence:  this large large is with with with a everyday everyday everyday everyday everyday Padding Padding Padding Padding Padding Padding Padding
+=================================
+=================================
+keywords:  ['black', 'tuxedo', 'tailored', 'leather', 'contemporary', 'Padding', 'Padding', 'Padding', 'Padding', 'Padding']
+sentence:  ['SOS', 'black', 'tuxedo', 'stripes', 'give', 'this', 'elegantly', 'tailored', 'pair', 'a', 'hit', 'of', 'glamour,', 'while', 'leather', 'trims', 'add', 'a', 'contemporary', 'spin', 'EOS']
+generated sentence:  this black leather is this tailored tailored a tailored leather tailored leather contemporary contemporary EOS Padding Padding Padding Padding Padding
+=================================
