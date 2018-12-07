@@ -172,15 +172,15 @@ class FashionSentenceGenerator(nn.Module):
                     loss += -torch.log(P_xts[batch_i, self.normal_vocab_size + associated_memory_index])
             g_history[:, di, :] = new_g
             if use_teacher_forcing:
-                prev_word_embeddings = self.word_embedder(batch_data["sentence"][:,0,:])
+                prev_word_embeddings = self.word_embedder(batch_data["sentence"][:,di,:])
             else:
                 curr_word_embeddings = torch.zeros(self.batch_size, 1, self.embedding_dim)
                 for batch_i in range(self.batch_size):
                     topv, topi = P_xts[batch_i][:self.normal_vocab_size + self.current_mem_sizes[batch_i]].topk(1)
 
                     if topi >= self.normal_vocab_size:
-                        topi = batch_data["keywords"][batch_i][topi % self.normal_vocab_size]
-                    curr_word_embeddings[batch_i] = self.word_embedder(topi)
+                        topi = batch_data["keywords"][batch_i][topi % self.normal_vocab_size].view(-1)
+                    curr_word_embeddings[batch_i] = self.word_embedder(topi.squeeze())
                 prev_word_embeddings = curr_word_embeddings
 
 
@@ -238,12 +238,13 @@ class FashionSentenceGenerator(nn.Module):
             topv, topi = P_xts[0][:self.normal_vocab_size + self.current_mem_sizes].topk(1)
             # === increment t ===
             self.t += 1
-            self.prev_hidden = hiddens.squeeze()
+            self.prev_hiddens = hiddens.view(1,-1)
             next_word_indices = batch_data["sentence"][:, di, :].squeeze()
             if topi >= self.normal_vocab_size:
-                topi = batch_data["keywords"][0][topi % self.normal_vocab_size]
+                topi = batch_data["keywords"][0][topi % self.normal_vocab_size].view(-1)
 
             generated_sent.append(topi)
+            prev_word_embeddings = self.word_embedder(topi).unsqueeze(0)
             g_history[:, di, :] = new_g
 
         return loss, g_history, generated_sent
