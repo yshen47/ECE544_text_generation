@@ -20,7 +20,10 @@ class FashionSentenceGenerator(nn.Module):
         super(FashionSentenceGenerator, self).__init__()
         self.hidden_size = embedding_dim
         self.embedding_dim = embedding_dim
-        self.word_embedder = nn.Embedding(normal_vocab_size + keyword_vocab_size, self.embedding_dim)
+        self.word_embedder = nn.Sequential(
+            nn.Embedding(normal_vocab_size + keyword_vocab_size, self.embedding_dim),
+            nn.Dropout(0.1)
+        )
         self.max_mem_size = max_mem_size
         self.normal_vocab_size = normal_vocab_size
         self.max_len = max_len
