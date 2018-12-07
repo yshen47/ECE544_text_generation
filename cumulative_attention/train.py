@@ -7,13 +7,14 @@ import os
 from tqdm import tqdm
 #import torch.multiprocessing as mp
 import random
+from Config import config
 
 BATCH_SIZE = 5
 EPOCH_SIZE = 64
-MEMORY_SIZE = 8
+MEMORY_SIZE = 8.0
 MODEL_DIRECTORY = './model.pth'
 print(os.getcwd())
-device = torch.device("cpu")
+device =config.device
 train_dataset = FashionDataSet('../dataset/train_dataset.p')
 test_dataset = FashionDataSet('../dataset/test_dataset.p')
 
@@ -63,14 +64,15 @@ def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BA
                 f.write(str(validation_loss) + '\n')
             print(validation_loss)
 
-def run():
-    processes = []
-    for i in range(4):  # No. of processes
-        p = mp.Process(target=train, args=(model,))
-        p.start()
-        processes.append(p)
-    for p in processes: p.join()
+# def run():
+#     processes = []
+#     for i in range(4):  # No. of processes
+#         p = mp.Process(target=train, args=(model,))
+#         p.start()
+#         processes.append(p)
+#     for p in processes: p.join()
 
 if __name__ == '__main__':
+    print("device:",device)
     train(model)
 
