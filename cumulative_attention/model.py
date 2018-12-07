@@ -4,6 +4,7 @@ from torch import nn
 device = torch.device("cpu")
 available = False
 
+
 class FashionSentenceGenerator(nn.Module):
 
     def __init__(self, normal_vocab_size, keyword_vocab_size, max_len=30, max_mem_size=10, num_layers=1,
@@ -107,7 +108,7 @@ class FashionSentenceGenerator(nn.Module):
         # ====== memorize t =====
         self.t = 1
 
-    def forward(self, batch_data):
+    def forward(self, batch_data, use_teacher_forcing):
         # Single example
         self.prepare_memory(batch_data)
         self.prepare_history()
@@ -170,75 +171,21 @@ class FashionSentenceGenerator(nn.Module):
                             break
                     loss += -torch.log(P_xts[batch_i, self.normal_vocab_size + associated_memory_index])
             g_history[:, di, :] = new_g
-            prev_word_embeddings = self.word_embedder(batch_data["sentence"][:,0,:])
+            if use_teacher_forcing:
+                prev_word_embeddings = self.word_embedder(batch_data["sentence"][:,0,:])
+            else:
+                curr_word_embeddings = torch.zeros(self.batch_size, 1, self.embedding_dim)
+                for batch_i in range(self.batch_size):
+                    topv, topi = P_xts[batch_i][:self.normal_vocab_size + self.current_mem_sizes[batch_i]].topk(1)
+
+                    if topi >= self.normal_vocab_size:
+                        topi = batch_data["keywords"][batch_i][topi % self.normal_vocab_size]
+                    curr_word_embeddings[batch_i] = self.word_embedder(topi)
+                prev_word_embeddings = curr_word_embeddings
+
 
         return loss, g_history
 
-    def forward(self, batch_data):
-        self.prepare_memory(batch_data)
-        self.prepare_history()
-        # input_length = sentence_tensor.size[0]
-        loss = 0
-        prev_word_embeddings = self.word_embedder(batch_data["sentence"][:,0,:])
-        g_history = torch.zeros(self.batch_size, self.max_len, 1, device=device, dtype=torch.float)
-        for di in range(1, self.max_len):
-
-            # ===================== compute context ========================
-            context_HNs = self.apply_attention_HN(self.prev_hiddens)
-            context_HKs = self.apply_attention_HK(self.prev_hiddens)
-            context_HVs = self.apply_attention_HV(self.prev_hiddens)
-            context_Hs = torch.cat((context_HNs, context_HKs, context_HVs), 2)
-            context_MKs = self.apply_attention_MK(context_Hs)
-            context_MVs = self.apply_attention_MV(context_Hs)
-
-            cur_contexts = torch.cat((context_Hs, context_MKs, context_MVs), 2)
-            reshaped_curr_contexts = self.W_Ct_reshape(cur_contexts)
-
-            _, (hiddens, _) = self.lstm(prev_word_embeddings,
-                                        (self.prev_hiddens.squeeze().unsqueeze(0),
-                                         reshaped_curr_contexts.squeeze().unsqueeze(0)))
-                                        # out: tensor of shape (batch_size, seq_length, hidden_size*2)
-
-            # ===================== compute next output =====================
-
-            hidden_Ns = self.W_n(hiddens).squeeze()
-            hidden_Ks = self.W_k(hiddens).squeeze()
-            hidden_Vs = self.W_v(hiddens).squeeze()
-
-            P_Ns = self.normal_vocab_linear_layer(hidden_Ns)
-            P_MKs = F.softmax(torch.bmm(self.key_memory, hidden_Ks.unsqueeze(2)))
-            P_MVs = F.softmax(torch.bmm(self.value_memory, hidden_Vs.unsqueeze(2)))
-
-            # bridge the the decoder’s semantic space with the memory’s semantic space
-            P_Ms = ((P_MKs + P_MVs) / 2).squeeze()
-
-            # gating mechanism
-            new_g = torch.sigmoid(self.W_g(hiddens.squeeze()))
-
-            # compute the distribution for the next decoder output
-            P_xts = torch.cat((P_Ns * new_g, P_Ms * (1 - new_g)), dim=1)
-            # some greedy algorithm that outputs the most likely word in distribution P_xt
-            # output = greedy(P_xt, self.embedded_vocab, self.embedded_mem_val, self.embedded_mem_key)
-
-            # === increment t ===
-            self.t += 1
-            self.prev_hidden = hiddens.squeeze()
-            next_word_indices = batch_data["sentence"][:,di,:].squeeze()
-            for batch_i in range(self.batch_size):
-                next_word = next_word_indices[batch_i]
-                if next_word < self.normal_vocab_size:
-                    loss += -torch.log(P_xts[batch_i][next_word])
-                else:
-                    associated_memory_index = 0
-                    for curr_i, curr_word in enumerate(batch_data["keywords"][batch_i]):
-                        if curr_word[0] == next_word:
-                            associated_memory_index = curr_i
-                            break
-                    loss += -torch.log(P_xts[batch_i, self.normal_vocab_size + associated_memory_index])
-            g_history[:, di, :] = new_g
-            prev_word_embeddings = self.word_embedder(batch_data["sentence"][:,0,:])
-
-        return loss, g_history
 
     def eval(self, batch_data):
         # Single example

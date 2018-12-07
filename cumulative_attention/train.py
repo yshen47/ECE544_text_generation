@@ -5,7 +5,8 @@ from FashionDataSet import FashionDataSet
 from model import FashionSentenceGenerator
 import os
 from tqdm import tqdm
-import torch.multiprocessing as mp
+#import torch.multiprocessing as mp
+import random
 
 BATCH_SIZE = 5
 EPOCH_SIZE = 64
@@ -24,20 +25,21 @@ if os.path.exists(MODEL_DIRECTORY):
     model.load_state_dict(torch.load(MODEL_DIRECTORY))
     print("Successfully load from previous results.")
 
-model.share_memory()
+#model.share_memory()
 criterion_sentence = nn.NLLLoss()
 criterion_gating = nn.BCELoss()
 decoder_optimizer = torch.optim.Adam(model.parameters())
 
 
-def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1):
+def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio= 0.5):
     train_data_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers, drop_last=True)
     test_data_loader = DataLoader(test_dataset, batch_size=batch_size, num_workers=num_workers, drop_last=True)
     for i in tqdm(range(1, epoch_size + 1)):
         print("Running epoch ", str(i))
         for i_batch, sampled_batch in tqdm(enumerate(train_data_loader)):
             decoder_optimizer.zero_grad()
-            loss, g_history = model(sampled_batch)
+            use_teacher_forcing = True if random.random() < teacher_forcing_ratio else False
+            loss, g_history = model(sampled_batch, use_teacher_forcing)
             for i in range(batch_size):
                 loss += gate_coefficient * criterion_gating(g_history[i], sampled_batch['g_truth'][i])
             loss.backward()
@@ -53,7 +55,7 @@ def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BA
         with torch.set_grad_enabled(False):
             validation_loss = 0
             for i_batch, sampled_batch in enumerate(test_data_loader):
-                loss, g_history = model(sampled_batch)
+                loss, g_history = model(sampled_batch, use_teacher_forcing=True)
                 for i in range(batch_size):
                     loss += gate_coefficient * criterion_gating(g_history[i], sampled_batch['g_truth'][i])
                 validation_loss += loss
@@ -63,13 +65,12 @@ def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BA
 
 def run():
     processes = []
-    for i in range(1):  # No. of processes
+    for i in range(4):  # No. of processes
         p = mp.Process(target=train, args=(model,))
         p.start()
         processes.append(p)
     for p in processes: p.join()
 
 if __name__ == '__main__':
-    torch.multiprocessing.freeze_support()
-    run()
+    train(model)
 
