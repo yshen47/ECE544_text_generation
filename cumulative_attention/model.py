@@ -82,6 +82,9 @@ class FashionSentenceGenerator(nn.Module):
             torch.nn.Tanh()
         )
 
+        self.output_combine = torch.nn.Linear(6 * self.embedding_dim, self.hidden_size)
+        self.gru = torch.nn.GRU(self.embedding_dim, self.hidden_size, num_layers)
+
     def prepare_memory(self, batch_data):
         self.current_mem_sizes = batch_data["memory_size"]
         self.key_memory = torch.zeros(self.batch_size, self.max_mem_size, self.embedding_dim, dtype=torch.float,
@@ -137,11 +140,17 @@ class FashionSentenceGenerator(nn.Module):
             context_MVs = self.apply_attention_MV(context_Hs)
 
             cur_contexts = torch.cat((context_Hs, context_MKs, context_MVs), 2)
-            reshaped_curr_contexts = self.W_Ct_reshape(cur_contexts)
+            combined_output = torch.cat((prev_word_embeddings, cur_contexts), 2)
+            combined_output = self.output_combine(combined_output).squeeze().unsqueeze(0)
 
-            _, (hiddens, _) = self.lstm(prev_word_embeddings,
-                                        (self.prev_hiddens.squeeze().unsqueeze(0),
-                                         reshaped_curr_contexts.squeeze().unsqueeze(0)))
+            combined_output = F.relu(combined_output)
+            _, hiddens = self.gru(combined_output, self.prev_hiddens.squeeze().unsqueeze(0))
+            # reshaped_curr_contexts = self.W_Ct_reshape(cur_contexts)
+            #
+            # _, (hiddens, _) = self.lstm(prev_word_embeddings,
+            #                             (self.prev_hiddens.squeeze().unsqueeze(0),
+            #                              reshaped_curr_contexts.squeeze().unsqueeze(0)))
+
             # out: tensor of shape (batch_size, seq_length, hidden_size*2)
 
             # ===================== compute next output =====================
