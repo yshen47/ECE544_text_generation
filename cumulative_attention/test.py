@@ -32,6 +32,7 @@ def test(model, num_workers=0, gate_coefficient=20):
             ground_truth_sent = []
             generated_sent = []
             print("==========================================")
+            print("ground_truth_keywords: ", str(sampled_batch["keywords"][0]))
             print("ground_truth_history: ", str(sampled_batch["g_truth"][0]))
             print("generated history: ", str(g_history[0]))
             for i, word_index in enumerate(generated_sent_indices):
