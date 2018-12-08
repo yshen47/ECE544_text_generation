@@ -4,6 +4,7 @@ from lang import Lang
 import torch
 from Config import config
 import nltk
+nltk.download('averaged_perceptron_tagger')
 
 SOS_token = 0
 EOS_token = 1

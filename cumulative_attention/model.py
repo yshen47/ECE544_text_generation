@@ -167,7 +167,7 @@ class FashionSentenceGenerator(nn.Module):
 
             # === increment t ===
             self.t += 1
-            self.prev_hidden = hiddens.squeeze()
+            self.prev_hiddens = hiddens.squeeze()
             next_word_indices = batch_data["sentence"][:, di, :].squeeze()
             for batch_i in range(self.batch_size):
                 next_word = next_word_indices[batch_i]
