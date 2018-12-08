@@ -12,8 +12,8 @@ test_dataset = FashionDataSet('../dataset/test_dataset.p')
 
 word_lang = test_dataset.word_lang
 
-model = FashionSentenceGenerator(test_dataset.num_normal_word, word_lang.n_words - test_dataset.num_normal_word,
-                                     test_dataset.MAX_LENGTH, batch_size=1)
+model = FashionSentenceGenerator(test_dataset.num_normal_word, word_lang.n_words - test_dataset.num_normal_word, word_lang=word_lang,
+                                 max_len=test_dataset.MAX_LENGTH, batch_size=1)
 MODEL_DIRECTORY = './model.pth'
 
 if os.path.exists(MODEL_DIRECTORY):
