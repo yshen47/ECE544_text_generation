@@ -2,13 +2,14 @@ from torch.utils.data import Dataset
 import pickle
 from lang import Lang
 import torch
+from Config import config
 
 SOS_token = 0
 EOS_token = 1
 Padding_token = 2
 MAX_LENGTH = 21
 MAX_MEM_SIZE = 10
-device = torch.device("cpu")
+device = config.device
 
 def filter_keywors(pair):
     vocab = set()

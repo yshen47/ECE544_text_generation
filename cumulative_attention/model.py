@@ -1,7 +1,9 @@
 import torch
 import torch.nn.functional as F
 from torch import nn
-device = torch.device("cpu")
+from Config import config
+
+device = config.device
 available = False
 
 
@@ -175,7 +177,7 @@ class FashionSentenceGenerator(nn.Module):
             if use_teacher_forcing:
                 prev_word_embeddings = self.word_embedder(batch_data["sentence"][:,di,:])
             else:
-                curr_word_embeddings = torch.zeros(self.batch_size, 1, self.embedding_dim)
+                curr_word_embeddings = torch.zeros(self.batch_size, 1, self.embedding_dim, device=device)
                 for batch_i in range(self.batch_size):
                     topv, topi = P_xts[batch_i][:self.normal_vocab_size + self.current_mem_sizes[batch_i]].topk(1)
 
