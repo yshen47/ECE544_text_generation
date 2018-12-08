@@ -3,6 +3,7 @@ import pickle
 from lang import Lang
 import torch
 from Config import config
+import nltk
 
 SOS_token = 0
 EOS_token = 1
@@ -22,6 +23,11 @@ def filter_keywors(pair):
             newSen.append(word)
     return (pair[0], " ".join(newSen))
 
+
+def extract_tags(sentence):
+    # tokens = nltk.word_tokenize(sentence)
+    tagged = nltk.pos_tag(sentence)
+    return [t[1] for t in tagged]
 
 class FashionDataSet(Dataset):
 
@@ -79,7 +85,12 @@ class FashionDataSet(Dataset):
             keywords.append(Padding_token)
         categories = torch.tensor(categories[:MAX_MEM_SIZE], dtype=torch.long, device=device).view(-1, 1)
         keywords = torch.tensor(keywords[:MAX_MEM_SIZE], dtype=torch.long, device=device).view(-1, 1)
+        tags = ['NN'] + extract_tags(sentence.split()) + ['NN']
+        tags = tags[:MAX_LENGTH]
         sentence = self.tensor_from_sentence(sentence)
+        if len(tags) < MAX_LENGTH:
+            for i in range(len(tags), MAX_LENGTH):
+                tags.append('NN')
         g_ground_truth = torch.zeros(sentence.size(0), device=device)
 
         for di in range(1, sentence.size(0) - 1):
@@ -87,7 +98,7 @@ class FashionDataSet(Dataset):
                 g_ground_truth[di] = 0
             else:
                 g_ground_truth[di] = 1
-        return {"categories": categories, "keywords":keywords, "memory_size": min(len(keyword_pairs), MAX_MEM_SIZE), "sentence": sentence, "g_truth": g_ground_truth}
+        return {"categories": categories, "keywords":keywords, "memory_size": min(len(keyword_pairs), MAX_MEM_SIZE), "sentence": sentence, "tags": tags, "g_truth": g_ground_truth}
 
     def __len__(self):
         return len(self.raw_data)

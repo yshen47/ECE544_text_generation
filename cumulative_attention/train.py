@@ -20,8 +20,8 @@ test_dataset = FashionDataSet('../dataset/test_dataset.p')
 
 word_lang = train_dataset.word_lang
 
-model = FashionSentenceGenerator(train_dataset.num_normal_word, word_lang.n_words - train_dataset.num_normal_word,
-                                     train_dataset.MAX_LENGTH, batch_size=BATCH_SIZE)
+model = FashionSentenceGenerator(train_dataset.num_normal_word, word_lang.n_words - train_dataset.num_normal_word, word_lang=word_lang,
+                                     max_len=train_dataset.MAX_LENGTH, batch_size=BATCH_SIZE)
 if os.path.exists(MODEL_DIRECTORY):
     model.load_state_dict(torch.load(MODEL_DIRECTORY))
     print("Successfully load from previous results.")
