@@ -31,7 +31,7 @@ criterion_gating = nn.BCELoss()
 decoder_optimizer = torch.optim.Adam(model.parameters())
 
 
-def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio= 0.5):
+def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio=0.8):
     train_data_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers, drop_last=True)
     test_data_loader = DataLoader(test_dataset, batch_size=batch_size, num_workers=num_workers, drop_last=True)
     for i in tqdm(range(1, epoch_size + 1)):
@@ -39,7 +39,12 @@ def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BA
         for i_batch, sampled_batch in tqdm(enumerate(train_data_loader)):
             decoder_optimizer.zero_grad()
             use_teacher_forcing = True if random.random() < teacher_forcing_ratio else False
-            loss, g_history = model(sampled_batch, use_teacher_forcing)
+            loss, g_history, topis = model(sampled_batch, use_teacher_forcing)
+            if not use_teacher_forcing:
+                generated_sentence = []
+                for topic in topis:
+                    generated_sentence.append(word_lang.index2word[int(topic[0])])
+                print(" ".join(generated_sentence))
             for i in range(batch_size):
                 loss += gate_coefficient * criterion_gating(g_history[i], sampled_batch['g_truth'][i])
             loss.backward()

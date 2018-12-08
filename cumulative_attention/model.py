@@ -116,6 +116,7 @@ class FashionSentenceGenerator(nn.Module):
         loss = 0
         prev_word_embeddings = self.word_embedder(batch_data["sentence"][:,0,:])
         g_history = torch.zeros(self.batch_size, self.max_len, 1, device=device, dtype=torch.float)
+        topis = []
         for di in range(1, self.max_len):
 
             # ===================== compute context ========================
@@ -181,10 +182,12 @@ class FashionSentenceGenerator(nn.Module):
                     if topi >= self.normal_vocab_size:
                         topi = batch_data["keywords"][batch_i][topi % self.normal_vocab_size].view(-1)
                     curr_word_embeddings[batch_i] = self.word_embedder(topi.squeeze())
+
+                    if batch_i == 0:
+                        topis.append(topi)
                 prev_word_embeddings = curr_word_embeddings
 
-
-        return loss, g_history
+        return loss, g_history, topis
 
 
     def eval(self, batch_data):
