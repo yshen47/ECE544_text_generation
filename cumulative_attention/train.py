@@ -61,7 +61,7 @@ def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BA
         with torch.set_grad_enabled(False):
             validation_loss = 0
             for i_batch, sampled_batch in enumerate(test_data_loader):
-                loss, g_history = model(sampled_batch, use_teacher_forcing=True)
+                loss, g_history, _ = model(sampled_batch, use_teacher_forcing=True)
                 for i in range(batch_size):
                     loss += gate_coefficient * criterion_gating(g_history[i], sampled_batch['g_truth'][i])
                 validation_loss += loss
