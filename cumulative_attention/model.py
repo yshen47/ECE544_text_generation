@@ -224,7 +224,7 @@ class FashionSentenceGenerator(nn.Module):
             words.append(self.word_lang.index2word[int(indexes[i])] )
         return words
 
-    def eval(self, batch_data):
+    def predict(self, batch_data):
         # Single example
         self.prepare_memory(batch_data)
         self.prepare_history()
