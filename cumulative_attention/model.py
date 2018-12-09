@@ -13,7 +13,7 @@ available = False
 class FashionSentenceGenerator(nn.Module):
 
     def __init__(self, normal_vocab_size, keyword_vocab_size, word_lang=None, max_len=30, max_mem_size=10, num_layers=1,
-                 embedding_dim=50, batch_size=5, tag_constant = config.TAG_CONSTANT):
+                 embedding_dim=50, batch_size=5, tag_constant=config.TAG_CONSTANT):
         """
         Constructor for fashion sentence generator
         :param normal_vocab_size:   int     total number of normal vocabulary
@@ -117,6 +117,7 @@ class FashionSentenceGenerator(nn.Module):
             self.hist_K[i, 0, :] = initial_hidden
             self.hist_V[i, 0, :] = initial_hidden
         self.prev_hiddens = self.hist_N[:, 0, :].view(self.batch_size, -1)
+        self.ch = torch.zeros_like(self.prev_hiddens)
         # ====== memorize t =====
         self.t = 1
 
@@ -160,11 +161,10 @@ class FashionSentenceGenerator(nn.Module):
 
             combined_output = F.relu(combined_output)
             _, hiddens = self.gru(combined_output, self.prev_hiddens.squeeze().unsqueeze(0))
-            # reshaped_curr_contexts = self.W_Ct_reshape(cur_contexts)
             #
-            # _, (hiddens, _) = self.lstm(prev_word_embeddings,
+            # _, (hiddens, self.ch) = self.lstm(combined_output,
             #                             (self.prev_hiddens.squeeze().unsqueeze(0),
-            #                              reshaped_curr_contexts.squeeze().unsqueeze(0)))
+            #                              self.ch))
 
             # out: tensor of shape (batch_size, seq_length, hidden_size*2)
 
