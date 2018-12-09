@@ -126,10 +126,6 @@ class FashionSentenceGenerator(nn.Module):
         # ====== memorize t =====
         self.t = 1
 
-        # self.hist_N.requires_grad = False
-        # self.hist_K.requires_grad = False
-        # self.hist_V.requires_grad = False
-
     def update_history(self, di, hidden_Ns, hidden_Ks, hidden_Vs):
         temp_N = self.hist_N.clone()
         temp_K = self.hist_K.clone()
@@ -262,7 +258,6 @@ class FashionSentenceGenerator(nn.Module):
 
             combined_output = F.relu(combined_output)
             _, hiddens = self.gru(combined_output, self.prev_hiddens.squeeze().view(1, 1, -1))
-
 
             if self.model_type == 'gru':
                 _, hiddens = self.gru(combined_output, self.prev_hiddens.squeeze().unsqueeze(0))

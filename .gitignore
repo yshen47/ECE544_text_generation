@@ -2,7 +2,8 @@ dataset/
 *.pth
 *.pyc
 .idea/
-cumulative_attention/*validation_loss*.txt
+cumulative_attention/results/
+*validation_loss*.txt
 *test_result*.txt
 cumulative_attention/history
 .DS_Store
