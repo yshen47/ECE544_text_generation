@@ -117,6 +117,17 @@ class FashionSentenceGenerator(nn.Module):
         # ====== memorize t =====
         self.t = 1
 
+    def update_history(self, di, hidden_Ns, hidden_Ks, hidden_Vs):
+        temp_N = self.hist_N.clone()
+        temp_K = self.hist_K.clone()
+        temp_V = self.hist_V.clone()
+        temp_N[:, di, :] = hidden_Ns
+        temp_K[:, di, :] = hidden_Ks
+        temp_V[:, di, :] = hidden_Vs
+        self.hist_N = temp_N
+        self.hist_K = temp_K
+        self.hist_V = temp_V
+
     def forward(self, batch_data, use_teacher_forcing):
         # Single example
         self.prepare_memory(batch_data)
@@ -149,6 +160,8 @@ class FashionSentenceGenerator(nn.Module):
             hidden_Ns = self.W_n(hiddens).squeeze()
             hidden_Ks = self.W_k(hiddens).squeeze()
             hidden_Vs = self.W_v(hiddens).squeeze()
+
+            self.update_history(di, hidden_Ns, hidden_Ks, hidden_Vs)
 
             P_Ns = self.normal_vocab_linear_layer(hidden_Ns)
             P_MKs = F.softmax(torch.bmm(self.key_memory, hidden_Ks.unsqueeze(2)))
