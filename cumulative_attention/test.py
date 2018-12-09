@@ -8,6 +8,9 @@ from model import FashionSentenceGenerator
 import os
 from tqdm import tqdm
 
+BATCH_SIZE = 2
+EPOCH_SIZE = 64
+MEMORY_SIZE = 8.0
 test_dataset = FashionDataSet('../dataset/test_dataset.p')
 
 word_lang = test_dataset.word_lang
@@ -21,27 +24,17 @@ if os.path.exists(MODEL_DIRECTORY):
     print("Successfully load from previous results.")
 
 
-def test(model, num_workers=0, gate_coefficient=20):
-    test_data_loader = DataLoader(test_dataset, batch_size=1, num_workers=num_workers, drop_last=True)
-
-    # Validation
-    with torch.set_grad_enabled(False):
-        validation_loss = 0
-        for i_batch, sampled_batch in enumerate(test_data_loader):
-            loss, g_history, generated_sent_indices = model.predict(sampled_batch)
-            ground_truth_sent = []
-            generated_sent = []
-            print("==========================================")
-            #print("ground_truth_keywords: ", str(sampled_batch["keywords"][0]))
-            print("ground_truth_history: ", str(sampled_batch["g_truth"][0]))
-            print("generated history: ", str(g_history[0]))
-            for i, word_index in enumerate(generated_sent_indices):
-                next_word = word_lang.index2word[int(word_index[0])]
-                generated_sent.append(next_word)
-                ground_truth_sent.append(word_lang.index2word[int(sampled_batch["sentence"][0][i])])
-            print("ground_truth_sent: ", ' '.join(ground_truth_sent))
-            print("generated history: ", ' '.join(generated_sent))
-            print("==========================================")
+def test(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio=0):
+    test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers, drop_last=True)
+    for i in tqdm(range(1, epoch_size + 1)):
+        print("Running epoch ", str(i))
+        for i_batch, sampled_batch in tqdm(enumerate(test_dataloader)):
+            loss, g_history, topis = model(sampled_batch, False)
+            generated_sentence = []
+            for topic in topis:
+                generated_sentence.append(word_lang.index2word[int(topic[0])])
+            print(" ".join(generated_sentence))
 
 
-test(model)
+if __name__ == '__main__':
+    test(model)
