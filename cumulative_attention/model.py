@@ -192,20 +192,6 @@ class FashionSentenceGenerator(nn.Module):
             g_history[:, di, :] = new_g
             if use_teacher_forcing:
                 prev_word_embeddings = self.word_embedder(batch_data["sentence"][:, di, :])
-                # get words from indexes
-                for batch_i in range(self.batch_size):
-                    # get words from indexes
-                    topv, topi = P_xts[batch_i][:self.normal_vocab_size + self.current_mem_sizes[batch_i]].topk(1)
-
-                    if topi >= self.normal_vocab_size:
-                        topi = batch_data["keywords"][batch_i][topi % self.normal_vocab_size].view(-1)
-
-                    words = self.get_words_from_indexes(
-                        list(batch_data["sentence"][batch_i, :di, :].view(-1)) + [topi])
-                    tag = extract_tags(words)[-1]
-                    ground_truth_tag = batch_data["tags"][di][batch_i]
-                    if not tag == ground_truth_tag:
-                        loss += self.tag_constant
             else:
                 curr_word_embeddings = torch.zeros(self.batch_size, 1, self.embedding_dim, device=device)
                 for batch_i in range(self.batch_size):
