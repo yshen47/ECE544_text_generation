@@ -8,7 +8,7 @@ from model import FashionSentenceGenerator
 import os
 from tqdm import tqdm
 
-BATCH_SIZE = 2
+BATCH_SIZE = 5
 EPOCH_SIZE = 64
 MEMORY_SIZE = 8.0
 test_dataset = FashionDataSet('../dataset/test_dataset.p')
@@ -16,7 +16,7 @@ test_dataset = FashionDataSet('../dataset/test_dataset.p')
 word_lang = test_dataset.word_lang
 
 model = FashionSentenceGenerator(test_dataset.num_normal_word, word_lang.n_words - test_dataset.num_normal_word, word_lang=word_lang,
-                                 max_len=test_dataset.MAX_LENGTH, batch_size=1)
+                                 max_len=test_dataset.MAX_LENGTH, batch_size=5)
 MODEL_DIRECTORY = './model.pth'
 model.eval()
 if os.path.exists(MODEL_DIRECTORY):
@@ -33,7 +33,7 @@ def test(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BAT
             generated_sentence = []
             for topic in topis:
                 generated_sentence.append(word_lang.index2word[int(topic[0])])
-            print(" ".join(generated_sentence))
+            print("generated sentence:" + " ".join(generated_sentence))
 
 
 if __name__ == '__main__':

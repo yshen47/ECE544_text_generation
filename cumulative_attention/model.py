@@ -57,34 +57,28 @@ class FashionSentenceGenerator(nn.Module):
 
         self.gated_linear_layer = torch.nn.Sequential(
             torch.nn.Linear(self.hidden_size, max_mem_size),
-            torch.nn.BatchNorm1d(max_mem_size),
             torch.nn.Sigmoid()
         )
 
         self.W_g = nn.Linear(self.hidden_size, 1)
         self.attn_HN = torch.nn.Sequential(
             torch.nn.Linear((self.max_len + 1) * self.hidden_size, self.max_len),
-            torch.nn.BatchNorm1d(self.max_len),
             torch.nn.Tanh()
         )
         self.attn_HK = torch.nn.Sequential(
             torch.nn.Linear((self.max_len + 1) * self.hidden_size, self.max_len),
-            torch.nn.BatchNorm1d(self.max_len),
             torch.nn.Tanh()
         )
         self.attn_HV = torch.nn.Sequential(
             torch.nn.Linear((self.max_len + 1) * self.hidden_size, self.max_len),
-            torch.nn.BatchNorm1d(self.max_len),
             torch.nn.Tanh()
         )
         self.attn_MK = torch.nn.Sequential(
             torch.nn.Linear(4 * self.hidden_size, self.max_mem_size),
-            torch.nn.BatchNorm1d(self.max_mem_size),
             torch.nn.Tanh()
         )
         self.attn_MV = torch.nn.Sequential(
             torch.nn.Linear(4 * self.hidden_size, self.max_mem_size),
-            torch.nn.BatchNorm1d(self.max_mem_size),
             torch.nn.Tanh()
         )
 
