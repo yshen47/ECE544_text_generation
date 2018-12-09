@@ -3,5 +3,5 @@ dataset/
 *.pyc
 .idea/
 cumulative_attention/validation_loss.txt
-
+cumulative_attention/history
 .DS_Store
