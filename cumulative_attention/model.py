@@ -84,9 +84,9 @@ class FashionSentenceGenerator(nn.Module):
         self.output_combine = torch.nn.Linear(6 * self.embedding_dim, self.hidden_size)
 
         self.model_type = model_type
-        if model_type == 'gru':
+        if self.model_type == 'gru':
             self.gru = torch.nn.GRU(self.embedding_dim, self.hidden_size, num_layers)
-        elif model_type == 'lstm':
+        elif self.model_type == 'lstm':
             self.lstm = torch.nn.LSTM(self.embedding_dim, self.hidden_size, num_layers)
 
     def prepare_memory(self, batch_data):
@@ -277,6 +277,8 @@ class FashionSentenceGenerator(nn.Module):
             hidden_Ns = self.W_n(hiddens).view(1, -1)
             hidden_Ks = self.W_k(hiddens).view(1, -1)
             hidden_Vs = self.W_v(hiddens).view(1, -1)
+
+            self.update_history(di, hidden_Ns, hidden_Ks, hidden_Vs)
 
             P_Ns = self.normal_vocab_linear_layer(hidden_Ns)
             P_MKs = F.softmax(torch.bmm(self.key_memory, hidden_Ks.unsqueeze(2)))

@@ -14,14 +14,6 @@ test_dataset = FashionDataSet('../dataset/test_dataset.p')
 
 word_lang = test_dataset.word_lang
 
-model = FashionSentenceGenerator(test_dataset.num_normal_word, word_lang.n_words - test_dataset.num_normal_word, word_lang=word_lang,
-                                 max_len=test_dataset.MAX_LENGTH, batch_size=5)
-MODEL_DIRECTORY = './model.pth'
-model.eval()
-if os.path.exists(MODEL_DIRECTORY):
-    model.load_state_dict(torch.load(MODEL_DIRECTORY))
-    print("Successfully load from previous results.")
-
 
 def get_keywords(keywords_vector):
     keywords = []
@@ -39,7 +31,18 @@ def generate_ground_truth_sentence(sentence_vector):
     return " ".join(sentence)
 
 
-def test(model,  batch_size=BATCH_SIZE):
+def test(model_type='gru',  batch_size=BATCH_SIZE):
+
+    model = FashionSentenceGenerator(test_dataset.num_normal_word, word_lang.n_words - test_dataset.num_normal_word,
+                                     model_type=model_type,
+                                     word_lang=word_lang,
+                                     max_len=test_dataset.MAX_LENGTH, batch_size=5)
+    MODEL_DIRECTORY = './{}_model.pth'.format(model_type)
+    model.eval()
+    if os.path.exists(MODEL_DIRECTORY):
+        model.load_state_dict(torch.load(MODEL_DIRECTORY))
+        print("Successfully load {} from previous results.".format(model_type))
+
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, drop_last=True)
     total_loss = 0
     batch_count = 0
@@ -65,4 +68,4 @@ def test(model,  batch_size=BATCH_SIZE):
 
 
 if __name__ == '__main__':
-    test(model)
+    test(model_type='gru')
