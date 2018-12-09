@@ -79,12 +79,12 @@ class FashionSentenceGenerator(nn.Module):
         )
         self.attn_MK = torch.nn.Sequential(
             torch.nn.Linear(4 * self.hidden_size, self.max_mem_size),
-            torch.nn.BatchNorm1d(self.max_len),
+            torch.nn.BatchNorm1d(self.max_mem_size),
             torch.nn.Tanh()
         )
         self.attn_MV = torch.nn.Sequential(
             torch.nn.Linear(4 * self.hidden_size, self.max_mem_size),
-            torch.nn.BatchNorm1d(self.max_len),
+            torch.nn.BatchNorm1d(self.max_mem_size),
             torch.nn.Tanh()
         )
 
