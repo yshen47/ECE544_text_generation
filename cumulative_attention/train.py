@@ -12,27 +12,32 @@ from Config import config
 BATCH_SIZE = 5
 EPOCH_SIZE = 64
 MEMORY_SIZE = 8.0
-MODEL_DIRECTORY = './model.pth'
-print(os.getcwd())
+# print(os.getcwd())
 device =config.device
 train_dataset = FashionDataSet('../dataset/train_dataset.p')
 test_dataset = FashionDataSet('../dataset/test_dataset.p')
 
 word_lang = train_dataset.word_lang
 
-model = FashionSentenceGenerator(train_dataset.num_normal_word, word_lang.n_words - train_dataset.num_normal_word, word_lang=word_lang,
-                                     max_len=train_dataset.MAX_LENGTH, batch_size=BATCH_SIZE)
-if os.path.exists(MODEL_DIRECTORY):
-    model.load_state_dict(torch.load(MODEL_DIRECTORY))
-    print("Successfully load from previous results.")
-
 #model.share_memory()
-criterion_sentence = nn.NLLLoss()
-criterion_gating = nn.BCELoss()
-decoder_optimizer = torch.optim.Adam(model.parameters())
 
 
-def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio=0.95):
+def train(model_type='gru', save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio=0.95):
+
+    model = FashionSentenceGenerator(train_dataset.num_normal_word, word_lang.n_words - train_dataset.num_normal_word,
+                                     model_type=model_type,
+                                     word_lang=word_lang,
+                                     max_len=train_dataset.MAX_LENGTH, batch_size=BATCH_SIZE)
+
+    MODEL_DIRECTORY = './{}_model.pth'.format(model_type)
+    if os.path.exists(MODEL_DIRECTORY):
+        model.load_state_dict(torch.load(MODEL_DIRECTORY))
+        print("Successfully load from previous {} results.".format(model_type))
+
+    criterion_sentence = nn.NLLLoss()
+    criterion_gating = nn.BCELoss()
+    decoder_optimizer = torch.optim.Adam(model.parameters())
+
     train_data_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers, drop_last=True)
     test_data_loader = DataLoader(test_dataset, batch_size=batch_size, num_workers=num_workers, drop_last=True)
     for i in tqdm(range(1, epoch_size + 1)):
@@ -52,11 +57,11 @@ def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BA
             decoder_optimizer.step()
 
             if i_batch % save_every_batch_num == 0:
-                torch.save(model.state_dict(), "model.pth")
+                torch.save(model.state_dict(), "{}_model.pth".format(model_type))
                 print("saved model")
 
-        torch.save(model.state_dict(), "model.pth")
-        print("saved model")
+        torch.save(model.state_dict(), "{}_model.pth".format(model_type))
+        print("saved {} model".format(model_type))
         # Validation
         with torch.set_grad_enabled(False):
             validation_loss = 0
@@ -65,7 +70,7 @@ def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BA
                 for i in range(batch_size):
                     loss += gate_coefficient * criterion_gating(g_history[i], sampled_batch['g_truth'][i])
                 validation_loss += loss
-            with open('validation_loss.txt', 'a+') as f:
+            with open('validation_loss_{}.txt'.format(model_type), 'a+') as f:
                 f.write(str(validation_loss) + '\n')
             print(validation_loss)
 
@@ -79,5 +84,5 @@ def train(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BA
 
 if __name__ == '__main__':
     print("device:",device)
-    train(model)
+    train('lstm')
 
