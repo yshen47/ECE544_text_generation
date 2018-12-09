@@ -8,7 +8,7 @@ from model import FashionSentenceGenerator
 import os
 from tqdm import tqdm
 
-BATCH_SIZE = 5
+BATCH_SIZE = 2
 EPOCH_SIZE = 64
 MEMORY_SIZE = 8.0
 test_dataset = FashionDataSet('../dataset/test_dataset.p')
@@ -25,11 +25,10 @@ if os.path.exists(MODEL_DIRECTORY):
 
 
 def test(model, save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio=0):
-    train_data_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers, drop_last=True)
-    test_data_loader = DataLoader(test_dataset, batch_size=batch_size, num_workers=num_workers, drop_last=True)
+    test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers, drop_last=True)
     for i in tqdm(range(1, epoch_size + 1)):
         print("Running epoch ", str(i))
-        for i_batch, sampled_batch in tqdm(enumerate(train_data_loader)):
+        for i_batch, sampled_batch in tqdm(enumerate(test_dataloader)):
             loss, g_history, topis = model(sampled_batch, False)
             generated_sentence = []
             for topic in topis:
