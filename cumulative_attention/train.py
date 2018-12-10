@@ -10,7 +10,7 @@ import random
 from Config import config
 
 BATCH_SIZE = 5
-EPOCH_SIZE = 64
+EPOCH_SIZE = 30
 MEMORY_SIZE = 8.0
 # print(os.getcwd())
 device =config.device
@@ -29,7 +29,7 @@ def train(model_type='gru', save_every_batch_num=1000, epoch_size=EPOCH_SIZE, ba
                                      word_lang=word_lang,
                                      max_len=train_dataset.MAX_LENGTH, batch_size=BATCH_SIZE)
 
-    MODEL_DIRECTORY = './models/{}_model.pth'.format(model_type)
+    MODEL_DIRECTORY = './models/{}_model_batch{}.pth'.format(model_type, BATCH_SIZE)
     if os.path.exists(MODEL_DIRECTORY):
         model.load_state_dict(torch.load(MODEL_DIRECTORY))
         print("Successfully load from previous {} results.".format(model_type))
@@ -57,10 +57,10 @@ def train(model_type='gru', save_every_batch_num=1000, epoch_size=EPOCH_SIZE, ba
             decoder_optimizer.step()
 
             if i_batch % save_every_batch_num == 0:
-                torch.save(model.state_dict(), "./models/{}_model.pth".format(model_type))
+                torch.save(model.state_dict(), './models/{}_model_batch{}.pth'.format(model_type, BATCH_SIZE))
                 print("saved model")
 
-        torch.save(model.state_dict(), "./models/{}_model.pth".format(model_type))
+        torch.save(model.state_dict(), './models/{}_model_batch{}.pth'.format(model_type, BATCH_SIZE))
         print("saved {} model".format(model_type))
         # Validation
         with torch.set_grad_enabled(False):
@@ -70,7 +70,7 @@ def train(model_type='gru', save_every_batch_num=1000, epoch_size=EPOCH_SIZE, ba
                 for i in range(batch_size):
                     loss += gate_coefficient * criterion_gating(g_history[i], sampled_batch['g_truth'][i])
                 validation_loss += loss
-            with open('./results/validation_loss_{}.txt'.format(model_type), 'a+') as f:
+            with open('./results/validation_loss_{}_batch{}.txt'.format(model_type, BATCH_SIZE), 'a+') as f:
                 f.write(str(validation_loss) + '\n')
             print(validation_loss)
 
@@ -84,5 +84,5 @@ def train(model_type='gru', save_every_batch_num=1000, epoch_size=EPOCH_SIZE, ba
 
 if __name__ == '__main__':
     print("device:", device)
-    train(model_type='gru')
+    train(model_type='lstm')
 

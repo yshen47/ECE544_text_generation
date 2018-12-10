@@ -59,8 +59,8 @@ def test(model_type='gru',  batch_size=BATCH_SIZE):
     model = FashionSentenceGenerator(test_dataset.num_normal_word, word_lang.n_words - test_dataset.num_normal_word,
                                      model_type=model_type,
                                      word_lang=word_lang,
-                                     max_len=test_dataset.MAX_LENGTH, batch_size=5)
-    MODEL_DIRECTORY = './models/{}_model.pth'.format(model_type)
+                                     max_len=test_dataset.MAX_LENGTH, batch_size=BATCH_SIZE)
+    MODEL_DIRECTORY = './models/{}_model_batch{}.pth'.format(model_type, BATCH_SIZE)
     model.eval()
     if os.path.exists(MODEL_DIRECTORY):
         model.load_state_dict(torch.load(MODEL_DIRECTORY))
