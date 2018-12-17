@@ -22,7 +22,7 @@ word_lang = train_dataset.word_lang
 #model.share_memory()
 
 
-def train(model_type='gru', save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio=0.95):
+def train(model_type='lstm', save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio=0.95):
 
     model = FashionSentenceGenerator(train_dataset.num_normal_word, word_lang.n_words - train_dataset.num_normal_word,
                                      model_type=model_type,

@@ -12,7 +12,7 @@ available = False
 
 class FashionSentenceGenerator(nn.Module):
 
-    def __init__(self, normal_vocab_size, keyword_vocab_size, model_type='gru', word_lang=None, max_len=30, max_mem_size=10, num_layers=1,
+    def __init__(self, normal_vocab_size, keyword_vocab_size, model_type='lstm', word_lang=None, max_len=30, max_mem_size=10, num_layers=1,
                  embedding_dim=50, batch_size=5, tag_constant=config.TAG_CONSTANT):
         """
         Constructor for fashion sentence generator
