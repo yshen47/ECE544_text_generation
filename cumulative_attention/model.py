@@ -12,8 +12,8 @@ available = False
 
 class FashionSentenceGenerator(nn.Module):
 
-    def __init__(self, normal_vocab_size, keyword_vocab_size, word_lang=None, max_len=30, max_mem_size=10, num_layers=1,
-                 embedding_dim=50, batch_size=5, tag_constant = config.TAG_CONSTANT):
+    def __init__(self, normal_vocab_size, keyword_vocab_size, model_type='gru', word_lang=None, max_len=30, max_mem_size=10, num_layers=1,
+                 embedding_dim=50, batch_size=5, tag_constant=config.TAG_CONSTANT):
         """
         Constructor for fashion sentence generator
         :param normal_vocab_size:   int     total number of normal vocabulary
@@ -37,7 +37,6 @@ class FashionSentenceGenerator(nn.Module):
         self.device = device
         self.batch_size = batch_size
         self.W_Ct_reshape = nn.Linear(5 * self.embedding_dim, self.hidden_size)
-        self.lstm = nn.LSTM(self.embedding_dim, self.hidden_size, num_layers, batch_first=True, bidirectional=False)
         self.tag_constant = tag_constant
 
         self.W_n = nn.Linear(self.hidden_size, self.hidden_size, bias=False)
@@ -82,6 +81,14 @@ class FashionSentenceGenerator(nn.Module):
             torch.nn.Tanh()
         )
 
+        self.output_combine = torch.nn.Linear(6 * self.embedding_dim, self.hidden_size)
+
+        self.model_type = model_type
+        if self.model_type == 'gru':
+            self.gru = torch.nn.GRU(self.embedding_dim, self.hidden_size, num_layers)
+        elif self.model_type == 'lstm':
+            self.lstm = torch.nn.LSTM(self.embedding_dim, self.hidden_size, num_layers)
+
     def prepare_memory(self, batch_data):
         self.current_mem_sizes = batch_data["memory_size"]
         self.key_memory = torch.zeros(self.batch_size, self.max_mem_size, self.embedding_dim, dtype=torch.float,
@@ -95,9 +102,9 @@ class FashionSentenceGenerator(nn.Module):
 
     def prepare_history(self):
         # ====== build history =====
-        self.hist_N = torch.zeros(self.batch_size, self.max_len, self.hidden_size, dtype=torch.float, device=device)
-        self.hist_K = torch.zeros(self.batch_size, self.max_len, self.hidden_size, dtype=torch.float, device=device)
-        self.hist_V = torch.zeros(self.batch_size, self.max_len, self.hidden_size, dtype=torch.float, device=device)
+        self.hist_N = torch.zeros(self.batch_size, self.max_len, self.hidden_size, dtype=torch.float, device=device, requires_grad = False)
+        self.hist_K = torch.zeros(self.batch_size, self.max_len, self.hidden_size, dtype=torch.float, device=device, requires_grad = False)
+        self.hist_V = torch.zeros(self.batch_size, self.max_len, self.hidden_size, dtype=torch.float, device=device, requires_grad = False)
 
         # ====== build prev_hidden h_(t-1) =====
         if available:
@@ -114,6 +121,8 @@ class FashionSentenceGenerator(nn.Module):
             self.hist_K[i, 0, :] = initial_hidden
             self.hist_V[i, 0, :] = initial_hidden
         self.prev_hiddens = self.hist_N[:, 0, :].view(self.batch_size, -1)
+        if self.model_type == 'lstm':
+            self.ch = torch.zeros_like(self.prev_hiddens)
         # ====== memorize t =====
         self.t = 1
 
@@ -148,11 +157,18 @@ class FashionSentenceGenerator(nn.Module):
             context_MVs = self.apply_attention_MV(context_Hs)
 
             cur_contexts = torch.cat((context_Hs, context_MKs, context_MVs), 2)
-            reshaped_curr_contexts = self.W_Ct_reshape(cur_contexts)
+            combined_output = torch.cat((prev_word_embeddings, cur_contexts), 2)
+            combined_output = self.output_combine(combined_output).squeeze().unsqueeze(0)
 
-            _, (hiddens, _) = self.lstm(prev_word_embeddings,
-                                        (self.prev_hiddens.squeeze().unsqueeze(0),
-                                         reshaped_curr_contexts.squeeze().unsqueeze(0)))
+            combined_output = F.relu(combined_output)
+
+            if self.model_type == 'gru':
+                _, hiddens = self.gru(combined_output, self.prev_hiddens.squeeze().unsqueeze(0))
+            elif self.model_type == 'lstm':
+                _, (hiddens, self.ch) = self.lstm(combined_output,
+                                            (self.prev_hiddens.squeeze().unsqueeze(0),
+                                             self.ch.squeeze().unsqueeze(0)))
+
             # out: tensor of shape (batch_size, seq_length, hidden_size*2)
 
             # ===================== compute next output =====================
@@ -237,11 +253,18 @@ class FashionSentenceGenerator(nn.Module):
             context_MVs = self.apply_attention_MV(context_Hs)
 
             cur_contexts = torch.cat((context_Hs, context_MKs, context_MVs), 2)
-            reshaped_curr_contexts = self.W_Ct_reshape(cur_contexts)
+            combined_output = torch.cat((prev_word_embeddings, cur_contexts), 2)
+            combined_output = self.output_combine(combined_output).squeeze().view(1, 1, -1)
 
-            _, (hiddens, _) = self.lstm(prev_word_embeddings,
-                                        (self.prev_hiddens.squeeze().view(1, 1, -1),
-                                         reshaped_curr_contexts.view(1, 1, -1)))
+            combined_output = F.relu(combined_output)
+            _, hiddens = self.gru(combined_output, self.prev_hiddens.squeeze().view(1, 1, -1))
+
+            if self.model_type == 'gru':
+                _, hiddens = self.gru(combined_output, self.prev_hiddens.squeeze().unsqueeze(0))
+            elif self.model_type == 'lstm':
+                _, (hiddens, self.ch) = self.lstm(combined_output,
+                                            (self.prev_hiddens.squeeze().unsqueeze(0),
+                                             self.ch))
             # out: tensor of shape (batch_size, seq_length, hidden_size*2)
 
             # ===================== compute next output =====================
@@ -249,6 +272,8 @@ class FashionSentenceGenerator(nn.Module):
             hidden_Ns = self.W_n(hiddens).view(1, -1)
             hidden_Ks = self.W_k(hiddens).view(1, -1)
             hidden_Vs = self.W_v(hiddens).view(1, -1)
+
+            self.update_history(di, hidden_Ns, hidden_Ks, hidden_Vs)
 
             P_Ns = self.normal_vocab_linear_layer(hidden_Ns)
             P_MKs = F.softmax(torch.bmm(self.key_memory, hidden_Ks.unsqueeze(2)))
