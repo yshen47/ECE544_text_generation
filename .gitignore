@@ -1,5 +1,4 @@
 dataset/
-*.pth
 *.pyc
 .idea/
 cumulative_attention/history
