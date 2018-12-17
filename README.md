@@ -23,3 +23,5 @@ The model type can be changed inside both train.py and test.py by changeing mode
 
 ### Other information
 We saved pre-trained lstm and gru models in the cumulative_attention/models/ folder, and saved pre-ran results in cumulative_attention/results/ folder
+
+More details can be found in project_report.pdf
