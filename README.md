@@ -1,6 +1,7 @@
 # FashionSentenseGeneration# ECE544_finalproject
 
-Environment: pytorch 0.4.1
+Environment: pytorch 0.4.1 
+
 We saved a pretrained_model in the cumulative_attention/models/ folder
 
 To train our model: python train.py
