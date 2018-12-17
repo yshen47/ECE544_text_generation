@@ -54,7 +54,7 @@ def quality_evaluation(keywords, generated_sentence):
     return keywords_coverage, keywords_repetition_rate, enrichment
 
 
-def test(model_type='gru',  batch_size=BATCH_SIZE):
+def test(model_type='lstm',  batch_size=BATCH_SIZE):
 
     model = FashionSentenceGenerator(test_dataset.num_normal_word, word_lang.n_words - test_dataset.num_normal_word,
                                      model_type=model_type,
