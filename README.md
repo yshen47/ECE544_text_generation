@@ -19,7 +19,7 @@ To run test and redirct ouput to a result file in cumulative_attention/results/ 
 python test.py > cumulative_attention/results/[result file name]
 ```
 
-The model type can be changed inside both train.py and test.py
+The model type can be changed inside both train.py and test.py by changeing model_type='lstm' to model_type='gru' in main functions. The batch size can be changed similarly in both files by changing the BATCH_SIZE paramter. Currently, the defualt model type is lstm and the default batch size if 5.
 
 ### Other information
 We saved pre-trained lstm and gru models in the cumulative_attention/models/ folder, and saved pre-ran results in cumulative_attention/results/ folder
