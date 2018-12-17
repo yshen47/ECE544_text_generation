@@ -1,4 +1,3 @@
-dataset/
 *.pyc
 .idea/
 cumulative_attention/history

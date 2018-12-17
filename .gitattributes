@@ -1,0 +1,4 @@
+sentence_dataset.obj filter=lfs diff=lfs merge=lfs -text
+fashion_sentence_dataset.txt filter=lfs diff=lfs merge=lfs -text
+fashion_sentence_embedding_dataset.txt filter=lfs diff=lfs merge=lfs -text
+train_dataset.p filter=lfs diff=lfs merge=lfs -text
