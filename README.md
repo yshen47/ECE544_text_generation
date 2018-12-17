@@ -1,4 +1,4 @@
-# FashionSentenseGeneration# ECE544_finalproject
+# Text Generation From Keywords via Cumulative Attention (ECE544_finalproject)
 
 ### Folder contents
 dataset/ contains dataset and preparation code
