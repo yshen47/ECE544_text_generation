@@ -5,21 +5,17 @@ from FashionDataSet import FashionDataSet
 from model import FashionSentenceGenerator
 import os
 from tqdm import tqdm
-#import torch.multiprocessing as mp
 import random
 from Config import config
 
 BATCH_SIZE = 5
 EPOCH_SIZE = 30
 MEMORY_SIZE = 8.0
-# print(os.getcwd())
 device =config.device
 train_dataset = FashionDataSet('../dataset/train_dataset.p')
 test_dataset = FashionDataSet('../dataset/test_dataset.p')
 
 word_lang = train_dataset.word_lang
-
-#model.share_memory()
 
 
 def train(model_type='lstm', save_every_batch_num=1000, epoch_size=EPOCH_SIZE, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, gate_coefficient=1, teacher_forcing_ratio=0.95):
@@ -73,14 +69,6 @@ def train(model_type='lstm', save_every_batch_num=1000, epoch_size=EPOCH_SIZE, b
             with open('./results/validation_loss_{}_batch{}.txt'.format(model_type, BATCH_SIZE), 'a+') as f:
                 f.write(str(validation_loss) + '\n')
             print(validation_loss)
-
-# def run():
-#     processes = []
-#     for i in range(4):  # No. of processes
-#         p = mp.Process(target=train, args=(model,))
-#         p.start()
-#         processes.append(p)
-#     for p in processes: p.join()
 
 if __name__ == '__main__':
     print("device:", device)

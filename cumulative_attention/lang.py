@@ -1,3 +1,4 @@
+# language model class used to data preparation
 class Lang:
     def __init__(self, name):
         self.name = name

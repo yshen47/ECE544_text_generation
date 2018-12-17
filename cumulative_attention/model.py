@@ -2,14 +2,11 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 from Config import config
-from FashionDataSet import extract_tags
-import numpy as np
-import nltk
 
 device = config.device
 available = False
 
-
+# the generator model
 class FashionSentenceGenerator(nn.Module):
 
     def __init__(self, normal_vocab_size, keyword_vocab_size, model_type='lstm', word_lang=None, max_len=30, max_mem_size=10, num_layers=1,
@@ -191,8 +188,6 @@ class FashionSentenceGenerator(nn.Module):
 
             # compute the distribution for the next decoder output
             P_xts = torch.cat((P_Ns * new_g, P_Ms * (1 - new_g)), dim=1)
-            # some greedy algorithm that outputs the most likely word in distribution P_xt
-            # output = greedy(P_xt, self.embedded_vocab, self.embedded_mem_val, self.embedded_mem_key)
 
             # === increment t ===
             self.t += 1
@@ -232,77 +227,6 @@ class FashionSentenceGenerator(nn.Module):
         for i in range(len(indexes)):
             words.append(self.word_lang.index2word[int(indexes[i])] )
         return words
-
-    def predict(self, batch_data):
-        # Single example
-        self.prepare_memory(batch_data)
-        self.prepare_history()
-        # input_length = sentence_tensor.size[0]
-        loss = 0
-        prev_word_embeddings = self.word_embedder(batch_data["sentence"][:, 0, :])
-        generated_sent = []
-        g_history = torch.zeros(self.batch_size, self.max_len, 1, device=device, dtype=torch.float)
-        for di in range(1, self.max_len):
-
-            # ===================== compute context ========================
-            context_HNs = self.apply_attention_HN(self.prev_hiddens)
-            context_HKs = self.apply_attention_HK(self.prev_hiddens)
-            context_HVs = self.apply_attention_HV(self.prev_hiddens)
-            context_Hs = torch.cat((context_HNs, context_HKs, context_HVs), 2)
-            context_MKs = self.apply_attention_MK(context_Hs)
-            context_MVs = self.apply_attention_MV(context_Hs)
-
-            cur_contexts = torch.cat((context_Hs, context_MKs, context_MVs), 2)
-            combined_output = torch.cat((prev_word_embeddings, cur_contexts), 2)
-            combined_output = self.output_combine(combined_output).squeeze().view(1, 1, -1)
-
-            combined_output = F.relu(combined_output)
-            _, hiddens = self.gru(combined_output, self.prev_hiddens.squeeze().view(1, 1, -1))
-
-            if self.model_type == 'gru':
-                _, hiddens = self.gru(combined_output, self.prev_hiddens.squeeze().unsqueeze(0))
-            elif self.model_type == 'lstm':
-                _, (hiddens, self.ch) = self.lstm(combined_output,
-                                            (self.prev_hiddens.squeeze().unsqueeze(0),
-                                             self.ch))
-            # out: tensor of shape (batch_size, seq_length, hidden_size*2)
-
-            # ===================== compute next output =====================
-
-            hidden_Ns = self.W_n(hiddens).view(1, -1)
-            hidden_Ks = self.W_k(hiddens).view(1, -1)
-            hidden_Vs = self.W_v(hiddens).view(1, -1)
-
-            self.update_history(di, hidden_Ns, hidden_Ks, hidden_Vs)
-
-            P_Ns = self.normal_vocab_linear_layer(hidden_Ns)
-            P_MKs = F.softmax(torch.bmm(self.key_memory, hidden_Ks.unsqueeze(2)))
-            P_MVs = F.softmax(torch.bmm(self.value_memory, hidden_Vs.unsqueeze(2)))
-
-            # bridge the the decoder’s semantic space with the memory’s semantic space
-            P_Ms = ((P_MKs + P_MVs) / 2).view(1, -1)
-
-            # gating mechanism
-            new_g = torch.sigmoid(self.W_g(hiddens.view(1, -1)))
-
-            # compute the distribution for the next decoder output
-            P_xts = torch.cat((P_Ns * new_g, P_Ms * (1 - new_g)), dim=1)
-            # some greedy algorithm that outputs the most likely word in distribution P_xt
-            # output = greedy(P_xt, self.embedded_vocab, self.embedded_mem_val, self.embedded_mem_key)
-
-            topv, topi = P_xts[0][:self.normal_vocab_size + self.current_mem_sizes].topk(1)
-            # === increment t ===
-            self.t += 1
-            self.prev_hiddens = hiddens.view(1, -1)
-            next_word_indices = batch_data["sentence"][:, di, :].squeeze()
-            if topi >= self.normal_vocab_size:
-                topi = batch_data["keywords"][0][topi % self.normal_vocab_size].view(-1)
-
-            generated_sent.append(topi)
-            prev_word_embeddings = self.word_embedder(topi).unsqueeze(0)
-            g_history[:, di, :] = new_g
-
-        return loss, g_history, generated_sent
 
     def apply_attention_HN(self, prev_hiddens):
         # print("self.hist_N.size():", self.hist_N.size())

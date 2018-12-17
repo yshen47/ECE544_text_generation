@@ -13,6 +13,9 @@ MAX_LENGTH = 21
 MAX_MEM_SIZE = 10
 device = config.device
 
+
+# data and memory preparation functions
+
 def filter_keywors(pair):
     vocab = set()
     newSen = []

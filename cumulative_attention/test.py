@@ -1,8 +1,5 @@
-import random
 from torch.utils.data import DataLoader
 import torch
-from torch import nn
-from torch.nn.functional import binary_cross_entropy as bce_loss
 from FashionDataSet import FashionDataSet
 from model import FashionSentenceGenerator
 import os
