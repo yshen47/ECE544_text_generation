@@ -772,6 +772,6 @@ keywords_coverage:  1.0 ; keywords_repetition_rate:  0.058823529411764705 ; enri
 ------------------------------------------------------
 153 tests ran
 total average loss:  9811.010620915033
-total_average_keywords_coverage:  0.72j96296296296292
+total_average_keywords_coverage:  0.7296296296296292
 total_average_keywords_repetition_rate:  0.1285294848360166
 total_average_enrichment 0.6448961094585752
