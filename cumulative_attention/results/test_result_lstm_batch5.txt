@@ -1,0 +1,777 @@
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /Users/cc_alpaca/nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+Counted words:
+normal word 3050
+Successfully load lstm from previous results.
+the keywords used:  ['vintage', 'iconic', 'italian', 'jewelry']
+original sentence:  SOS expertly UNK by UNK this vintage UNK is an iconic design from the italian jewelry house EOS
+generated sentence: this iconic style is UNK and UNK jewelry UNK the UNK of the UNK of the iconic UNK EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.05263157894736842 ; enrichment 0.8421052631578947
+------------------------------------------------------
+the keywords used:  ['handcrafted', '18-karat', 'delicate', 'necklace', 'enameled', 'pendant', 'sparkling', 'sparkling', 'diamond']
+original sentence:  SOS handcrafted from 18-karat gold, this delicate necklace holds an enameled UNK pendant set with a sparkling diamond EOS
+generated sentence: diamond from UNK this 18-karat gold pendant UNK sparkling diamond and sparkling diamond diamond diamond UNK EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.29411764705882354 ; enrichment 0.47058823529411764
+------------------------------------------------------
+the keywords used:  ['slip', 'versatile', 'printed', 'chiffon', 'beaded', 'leather']
+original sentence:  SOS slip on this versatile pair with a printed chiffon blouse and beaded leather sandals for a laid-back look EOS
+generated sentence: printed this versatile style with a chiffon printed skirt, and UNK a UNK printed with UNK leather chiffon EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.15789473684210525 ; enrichment 0.631578947368421
+------------------------------------------------------
+the keywords used:  ['navy', 'blue', 'silk', 'high-waisted', 'mara', 'waistband', 'flared']
+original sentence:  SOS these navy blue silk high-waisted trousers from max mara feature an elasticated waistband and a flared style EOS
+generated sentence: this blue and flared flared pants from a mara a flared and a a a flared EOS
+keywords_coverage:  0.42857142857142855 ; keywords_repetition_rate:  0.17647058823529413 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['striking', 'blue', 'leather', 'silver', 'silver', 'wrap', 'wrap', 'bracelet', 'woven']
+original sentence:  SOS this striking blue leather and sterling silver UNK wrap bracelet from shaun leane features a woven design EOS
+generated sentence: this blue leather bracelet is made from woven with a woven of striking woven with UNK EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['versatile', 'comfortable', 'block', 'heel', 'heel', 'flattering', 'point', 'calf']
+original sentence:  SOS this versatile pair has a comfortable block heel and hits at a flattering point on your calf EOS
+generated sentence: this flattering point pair is set on a flattering calf point and has a calf point EOS
+keywords_coverage:  0.42857142857142855 ; keywords_repetition_rate:  0.23529411764705882 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['pump', 'viscose', 'block', 'heel', 'heel', 'print']
+original sentence:  SOS this proenza schouler pump is rendered in viscose and features a block heel and allover print EOS
+generated sentence: this UNK pump is rendered in viscose and features a block heel and block heel EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.125 ; enrichment 0.625
+------------------------------------------------------
+the keywords used:  ['multicolored', 'wool', 'striped', 'oversized', 'oversized', 'coat', 'msgm', 'long', 'button', 'fastening']
+original sentence:  SOS ” this multicolored wool blend striped oversized coat from msgm featuring long sleeves and a button fastening EOS
+generated sentence: this oversized button fastening button fastening fastening fastening fastening fastening fastening fastening fastening and and long EOS
+keywords_coverage:  0.4444444444444444 ; keywords_repetition_rate:  0.5294117647058824 ; enrichment 0.23529411764705882
+------------------------------------------------------
+the keywords used:  ['red', 'crystal', 'embellished', 'embellished', 'long', 'marni', 'clip', 'gold-tone', 'hardware', 'chain']
+original sentence:  SOS these red crystal embellished long earrings from marni feature a clip on fastening, gold-tone hardware and a strass chain EOS
+generated sentence: this gold-tone hardware chain embellished from marni features a chain clip fastening, hardware and chain hardware EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.23529411764705882 ; enrichment 0.4117647058823529
+------------------------------------------------------
+the keywords used:  ['denim', 'jacket', 'denim', 'denim']
+original sentence:  SOS philipp plein UNK denim jacket update your denim essentials with this UNK denim jackets from philipp plein EOS
+generated sentence: this UNK denim jacket is made from UNK denim and UNK denim to create a UNK denim EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.16666666666666666 ; enrichment 0.7222222222222222
+------------------------------------------------------
+the keywords used:  ['linen', 'skirt', 'high', 'frayed', 'short', 'length']
+original sentence:  SOS this multicolour linen blend UNK skirt features a high waist, frayed edges and a short length EOS
+generated sentence: this UNK short length skirt features a high waist, short sleeves, and a short length EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.1875 ; enrichment 0.5625
+------------------------------------------------------
+the keywords used:  ['high-rise', 'straight-leg', 'stretch-denim', 'shape']
+original sentence:  SOS these high-rise straight-leg UNK jeans are made from stretch-denim that won't UNK its shape or UNK feel EOS
+generated sentence: this straight-leg pair is made from stretch-denim for a UNK stretch-denim with UNK and UNK and UNK EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.05555555555555555 ; enrichment 0.8333333333333334
+------------------------------------------------------
+the keywords used:  ['point-toe', 'crafted', 'snake', 'snake', 'flattering', 'asymmetric', 'strap', 'foot']
+original sentence:  SOS this point-toe pair is crafted from snake and has a flattering asymmetric strap that frames and UNK your foot EOS
+generated sentence: this snake strap is made from foot UNK and has a point-toe silhouette and foot strap for flattering flattering EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.15 ; enrichment 0.6
+------------------------------------------------------
+the keywords used:  ['crafted', 'cotton', 'top', 'printed', 'tulle', 'curved', 'hem', 'hem']
+original sentence:  SOS crafted from cotton jersey, this tank top features a printed tulle UNK a sleeveless design and a curved hem EOS
+generated sentence: printed from a UNK blend, this curved tulle top has a curved curved hem and curved UNK EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.16666666666666666 ; enrichment 0.5555555555555556
+------------------------------------------------------
+the keywords used:  ['white', 'dress', 'waist', 'hem', 'hem']
+original sentence:  SOS made from cotton, this white dress has a v-neck, a cinched waist and fringing at the sleeves and hem EOS
+generated sentence: made from UNK this white dress has a UNK waist and a UNK waist and UNK EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['elegant', 'soft', 'blue', 'round', 'neck', 'short', 'length']
+original sentence:  SOS UNK for an elegant and functional design, this soft blue blouse features a round neck and short length sleeves EOS
+generated sentence: this elegant blue neck short length length from diesel’s length features a a a blue length EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.23529411764705882 ; enrichment 0.47058823529411764
+------------------------------------------------------
+the keywords used:  ['silk', 'everyday', 'top', 'short', 'straight', 'hem', 'hem']
+original sentence:  SOS fashioned from colourful silk blend, this everyday top features a boat neck, short sleeves and a straight hem EOS
+generated sentence: this UNK silk short hem short features a crew neck, top sleeves, and a straight hem EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['black', 'stretch', 'cotton', 'high', 'dolce', 'dolce', 'waistband', 'lace']
+original sentence:  SOS these black stretch cotton blend high waisted briefs from dolce & gabbana feature an elasticated waistband and lace panels EOS
+generated sentence: these lace black cotton lace shorts from dolce & gabbana feature an elasticated lace elasticated lace sleeves EOS
+keywords_coverage:  0.5714285714285714 ; keywords_repetition_rate:  0.16666666666666666 ; enrichment 0.6111111111111112
+------------------------------------------------------
+the keywords used:  ['heel', 'heel', 'piece', 'bar']
+original sentence:  SOS with the UNK of a heel this UNK piece will take you from the UNK to the bar EOS
+generated sentence: the UNK piece with a UNK heel that are a bar way to carry this style EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.0 ; enrichment 0.8235294117647058
+------------------------------------------------------
+the keywords used:  ['dolce', 'dolce', 'jacquard', 'vest', 'fitted', 'contrast', 'contrast']
+original sentence:  SOS this dolce & gabbana jacquard vest features a v neckline, a fitted silhouette, and contrast back EOS
+generated sentence: this fitted vest features a jacquard a UNK a fitted silhouette, and a contrast and fitted EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['japanese', 'designer', 'kenzo', 'world', 'scarf']
+original sentence:  SOS renowned for its offbeat accessories, japanese designer kenzo presents this grey world scarf to its aw17 collection EOS
+generated sentence: renowned for its offbeat accessories, japanese fashion kenzo presents this kenzo scarf from the UNK to the world EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.05263157894736842 ; enrichment 0.7368421052631579
+------------------------------------------------------
+the keywords used:  ['dress', 'corset', 'hem', 'hem']
+original sentence:  SOS this UNK strapless column dress features a sweetheart neckline, a corset bodice, and pleating at the back hem EOS
+generated sentence: this UNK dress features a notch lapel, a corset design, and a UNK hem EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.0 ; enrichment 0.8
+------------------------------------------------------
+the keywords used:  ['wear', 'statement', 'tee', 'eclectic', 'playful']
+original sentence:  SOS wear this statement style with a UNK tee and eclectic extras for a playful off-duty outfit EOS
+generated sentence: statement this UNK style with a playful UNK and a tee for eclectic to statement UNK EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7058823529411765
+------------------------------------------------------
+the keywords used:  ['italy', 'heel', 'heel', 'ankle', 'ankle', 'ankle', 'strap']
+original sentence:  SOS this pair has been expertly constructed in italy with a pin-thin heel and supportive ankle strap EOS
+generated sentence: made in italy from supple leather, these UNK sandals have a UNK heel and UNK heel EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.8235294117647058
+------------------------------------------------------
+the keywords used:  ['blue', 'print', 'scarf', 'etro', 'frayed']
+original sentence:  SOS this blue UNK blend paisley print scarf from etro features a paisley pattern and frayed edges EOS
+generated sentence: this etro UNK print scarf from etro features a UNK a UNK and frayed edges and a EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.05555555555555555 ; enrichment 0.7222222222222222
+------------------------------------------------------
+the keywords used:  ['london', 'dress', 'clutch', 'relaxed', 'cocktail']
+original sentence:  SOS team this UNK london dress with towering heels and a tonal clutch for an effortlessly relaxed cocktail look EOS
+generated sentence: carry this UNK london UNK with a relaxed clutch and a relaxed dress for a relaxed cocktail look EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.10526315789473684 ; enrichment 0.631578947368421
+------------------------------------------------------
+the keywords used:  ['wear', 'party', 'dress']
+original sentence:  SOS be inspired the brand's UNK glamour and wear this pair with a party dress and UNK hair EOS
+generated sentence: wear this UNK style with a UNK dress and UNK heels for a UNK look EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.0 ; enrichment 0.875
+------------------------------------------------------
+the keywords used:  ['dress', 'cut', 'soft', 'chambray', 'scoop', 'drawstring', 'waist', 'skirt']
+original sentence:  SOS this UNK dress is cut from ultra soft chambray with a scoop neckline, drawstring waist and UNK skirt EOS
+generated sentence: this skirt is cut from drawstring chambray and has a scoop neck, a skirt and a drawstring skirt EOS
+keywords_coverage:  0.625 ; keywords_repetition_rate:  0.15789473684210525 ; enrichment 0.5789473684210527
+------------------------------------------------------
+the keywords used:  ['iconic', 'bag', 'backpack', 'staple', 'piece', 'fendi']
+original sentence:  SOS finished off with iconic bag UNK detailing to the side, this backpack is a new-season staple piece from fendi EOS
+generated sentence: UNK staple piece UNK this iconic UNK bag from fendi is a iconic UNK bag EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.125 ; enrichment 0.5625
+------------------------------------------------------
+the keywords used:  ['crafted', 'slouchy', 'mini', 'cardholder']
+original sentence:  SOS crafted from UNK this slouchy mini is perfectly sized for smaller essentials like your cell phone and cardholder EOS
+generated sentence: crafted from a UNK this slouchy cardholder is a mini crafted UNK and UNK cardholder EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.125 ; enrichment 0.625
+------------------------------------------------------
+the keywords used:  ['boot', 'stacked', 'heel', 'heel', 'minimalist']
+original sentence:  SOS this victoria beckham boot is rendered in UNK and features a stacked heel and minimalist silhouette EOS
+generated sentence: this UNK et UNK boot is rendered in minimalist UNK and features a boot detail and stacked boot EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.10526315789473684 ; enrichment 0.7368421052631579
+------------------------------------------------------
+the keywords used:  ['silver', 'silver', 'ring', 'wild', 'butterfly', 'fastening']
+original sentence:  SOS UNK these sterling silver signet ring earrings from wouters & UNK wild UNK collection feature a butterfly fastening EOS
+generated sentence: this sterling butterfly ring from UNK features a butterfly fastening and a butterfly fastening and UNK EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.17647058823529413 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['deconstructed', 'denim', 'faux', 'fur', 'jacket', 'sacai', 'long', 'front', 'pocket']
+original sentence:  SOS this eye-catching deconstructed denim faux fur jacket from sacai features contrasting panels, long sleeves, and a front pocket EOS
+generated sentence: this long fur deconstructed jacket from from the features features a front pocket and front pocket EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.5294117647058824
+------------------------------------------------------
+the keywords used:  ['moncler', 'hooded', 'jacket', 'classic', 'modern', 'moncler', 'blue', 'jacket']
+original sentence:  SOS moncler hooded UNK jacket UNK to UNK classic silhouettes for a modern UNK moncler present this blue UNK jacket EOS
+generated sentence: jacket UNK with a modern moncler like this blue jacket from moncler to its aw17 collection EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['italy', 'small', 'embellished', 'embellished', 'top', 'handle', 'leopard-print']
+original sentence:  SOS made in italy from textured-leather, this small version has an embellished top handle and roomy leopard-print interior EOS
+generated sentence: made in italy from leopard-print leather, this UNK top is embellished with a leopard-print UNK embellished top EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.16666666666666666 ; enrichment 0.6111111111111112
+------------------------------------------------------
+the keywords used:  ['lanvin', 'shirt', 'crafted', 'shirt']
+original sentence:  SOS lanvin UNK shirt a classically crafted UNK this UNK shirt is a showcase of lanvin’s timeless design EOS
+generated sentence: crafted with a UNK this UNK shirt is crafted from UNK and has a UNK back shirt EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.7777777777777778
+------------------------------------------------------
+the keywords used:  ['perfect', 'oversized', 'oversized', 't-shirt', 'cut', 'signature', 'cotton-jersey', 'cotton-jersey']
+original sentence:  SOS designed for the perfect oversized fit, this UNK t-shirt is cut from the label's signature organic cotton-jersey EOS
+generated sentence: this oversized style is cut from cotton-jersey and cotton-jersey with a signature UNK and cut for UNK EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.6666666666666666
+------------------------------------------------------
+the keywords used:  ['tote', 'handle', 'shoulder', 'downtown', 'denim', 'cool']
+original sentence:  SOS tote this UNK style by the handle or on the shoulder to infuse downtown denim with UNK cool EOS
+generated sentence: carry this compact handle with a denim tote and denim to emulate the label's downtown cool EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['black', 'velvet', 'clutch', 'top', 'zip', 'strap', 'embroidered', 'logo', 'logo', 'front']
+original sentence:  SOS this black velvet clutch features a top zip fastening, a wrist strap and an embroidered logo to the front EOS
+generated sentence: this black logo top features a front logo front and an logo front and a front logo front EOS
+keywords_coverage:  0.4444444444444444 ; keywords_repetition_rate:  0.3684210526315789 ; enrichment 0.42105263157894735
+------------------------------------------------------
+the keywords used:  ['crafted', 'comfortable', 'waistband']
+original sentence:  SOS crafted from tactile crepe, these UNK pants have a comfortable elasticated waistband and UNK welt pockets EOS
+generated sentence: crafted from a UNK leather, these UNK trousers have a comfortable waistband and a UNK waistband EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['purple', 'piece', 'swimsuit', 'zimmermann', 'plunging', 'adjustable', 'front', 'button']
+original sentence:  SOS this purple UNK one piece swimsuit from zimmermann features a plunging neck, adjustable straps and front button detailing EOS
+generated sentence: this adjustable swimsuit has a front button button fastening, a button fastening, button at the button sleeves EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.2222222222222222 ; enrichment 0.5555555555555556
+------------------------------------------------------
+the keywords used:  ['piece', 'red', 'mini', 'dress', 'leather']
+original sentence:  SOS team this tactile piece with a red mini dress and caged leather sandals for the ultimate UNK look EOS
+generated sentence: this UNK mini dress is made from red leather and UNK with UNK leather UNK dress EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['blue', 'cotton', 'classic', 't-shirt', 'alexander', 'round', 'neck', 'short']
+original sentence:  SOS this electric blue cotton classic t-shirt from alexander wang features a round neck and short sleeves EOS
+generated sentence: this blue short neck t-shirt from alexander t-shirt features a classic a short blue and short sleeves EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.2222222222222222 ; enrichment 0.4444444444444444
+------------------------------------------------------
+the keywords used:  ['cut', 'loose', 'loose', 'hooded', 'top', 'soft', 'cotton', 'modal']
+original sentence:  SOS cut for a loose fit, this UNK hooded top is made from soft cotton blended with modal EOS
+generated sentence: cut for a loose fit, this modal has been made from soft modal blended with soft cotton EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.6111111111111112
+------------------------------------------------------
+the keywords used:  ['dolce', 'dolce', 'bag', 'embellished', 'embellished', 'bag', 'strap', 'new']
+original sentence:  SOS update your favourite dolce & gabbana bag with this embellished bag strap for a new edge EOS
+generated sentence: this new UNK bag is new strap bag bag is a new bag new strap EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.4375 ; enrichment 0.375
+------------------------------------------------------
+the keywords used:  ['handmade', 'suede', 'slim', 'cardholder']
+original sentence:  SOS handmade from suede and leather, this slim style is sized to stow your phone and cardholder EOS
+generated sentence: handmade from a UNK this UNK is made from suede and has a slim cardholder EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.0 ; enrichment 0.75
+------------------------------------------------------
+the keywords used:  ['city', 'contemporary', 'top', 'silver', 'silver']
+original sentence:  SOS this style takes UNK to the city - add contemporary edge with a UNK top and silver accents EOS
+generated sentence: UNK the brand's contemporary UNK this top is made from UNK contemporary UNK and UNK silver EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['dsquared2', 'double-breasted', 'coat', 'dsquared2', 'staple', 'quirky', 'double-breasted', 'coat']
+original sentence:  SOS dsquared2 double-breasted coat dsquared2 has given an autumn/winter staple a quirky update with this UNK double-breasted coat EOS
+generated sentence: dsquared2 double-breasted coat UNK quirky UNK coat is a double-breasted way to dsquared2 with this double-breasted coat EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.2777777777777778 ; enrichment 0.5
+------------------------------------------------------
+the keywords used:  ['black', 'crystal', 'heel', 'heel', 'snake', 'snake']
+original sentence:  SOS these UNK pumps are a luxurious option and are completed with a black crystal encrusted heel with snake detail EOS
+generated sentence: made from supple leather, these black crystal slides have a UNK crystal heel and is UNK EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['black', 'rock', 't-shirt', 'central', 'printed', 'logo', 'logo', 'short']
+original sentence:  SOS constructed from black cotton, this rock t-shirt features a crew neck, a central printed logo and short sleeves EOS
+generated sentence: this central logo t-shirt is short and features a short a a a central black and short EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.16666666666666666 ; enrichment 0.5555555555555556
+------------------------------------------------------
+the keywords used:  ['textured', 'white', 'jersey', 'dress']
+original sentence:  SOS UNK gives a nod to the '90s with this textured white jersey body-con tank dress EOS
+generated sentence: UNK updates the UNK of the UNK textured white dress with this UNK dress from UNK EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['structured', 'structured', 'satchel', 'cashmere', 'sweater', 'relaxed', 'weekend']
+original sentence:  SOS style this understated pair with a structured satchel and UNK cashmere sweater for relaxed UNK at the weekend EOS
+generated sentence: this relaxed satchel is made from a relaxed sweater and has a structured weekend for UNK weekend EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.6111111111111112
+------------------------------------------------------
+the keywords used:  ['season', 'geometric', 'adjustable', 'strap']
+original sentence:  SOS this UNK season crossbody is rendered in UNK and features a geometric silhouette and adjustable crossbody strap EOS
+generated sentence: this adjustable strap is designed in a UNK geometric strap and UNK with the brand's adjustable strap EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.16666666666666666 ; enrichment 0.6666666666666666
+------------------------------------------------------
+the keywords used:  ['nubuck', 'leather', 'accessory', 'lined']
+original sentence:  SOS this supple nubuck leather accessory is fully lined and roomy enough for your wallet, cell and UNK EOS
+generated sentence: this leather accessory is lined with the house's UNK nubuck that will comfortably to your accessory EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7058823529411765
+------------------------------------------------------
+the keywords used:  ['coat', 'cut', 'smooth', 'patterned']
+original sentence:  SOS UNK from that lineup, this voluminous coat is cut from smooth UNK that's patterned with UNK painterly florals EOS
+generated sentence: this UNK coat is patterned with a UNK of smooth UNK and is patterned with UNK EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['stunning', 'pink', 'silk', 'gown', 'ruffled', 'zip', 'fastening', 'length']
+original sentence:  SOS this stunning pink silk gown from features a ruffled neck, a concealed rear zip fastening and three-quarter length sleeves EOS
+generated sentence: this ruffled and ruffled zip fastening gown features a stunning a a a a a and length EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.05555555555555555 ; enrichment 0.6111111111111112
+------------------------------------------------------
+the keywords used:  ['woven', 'cutout', 'pouch']
+original sentence:  SOS impeccably made from woven leather, this cutout design comes with a removable pouch to keep your UNK concealed EOS
+generated sentence: this pair is woven with a cutout UNK and UNK cutout to ensure a UNK cutout EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['classic', 'event', 'clutch']
+original sentence:  SOS this style is a true UNK classic - carry it at your next event with a color-pop clutch EOS
+generated sentence: UNK this UNK classic clutch is a UNK and UNK to carry your cell, clutch to carry every occasions EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.05 ; enrichment 0.85
+------------------------------------------------------
+the keywords used:  ['crafted', 'slim', 't-shirt', 'fresh', 'perfect', 'new', 'season']
+original sentence:  SOS crafted for the brand's ss18 collection, this slim t-shirt is fresh and light, perfect for the new season EOS
+generated sentence: crafted in italy, this season features a perfect partner to a new season with a new UNK EOS
+keywords_coverage:  0.5714285714285714 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.6666666666666666
+------------------------------------------------------
+the keywords used:  ['draped', 'v-neck', 't-shirt', 'season']
+original sentence:  SOS rick owens draped v-neck t-shirt rick owens specializes in avant-garde silhouettes in muted colour palettes this season EOS
+generated sentence: rick owens draped t-shirt rick owens specializes in avant-garde silhouettes in muted colour palettes this season EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.0 ; enrichment 0.8235294117647058
+------------------------------------------------------
+the keywords used:  ['camel', 'wool-blend', 'striped', 'patchwork', 'scarf', 'tassel', 'patchwork']
+original sentence:  SOS this camel and grey wool-blend striped patchwork scarf features a color-blocked UNK tassel detailing and a patchwork design EOS
+generated sentence: this wool-blend tassel wool-blend scarf features a patchwork a UNK a and a striped a patchwork EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['pleated', 'tulle', 'dress', 'high', 'ruffle', 'mini']
+original sentence:  SOS this philosophy di lorenzo serafini pleated tulle dress features a high neckline, allover ruffle detail, and mini silhouette EOS
+generated sentence: this UNK mini dress features a high rise waist, pleated ruffle detail, and mini silhouette EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.0625 ; enrichment 0.625
+------------------------------------------------------
+the keywords used:  ['sweatshirt', 'round', 'long', 'relaxed', 'fit', 'central', 'logo', 'logo', 'print']
+original sentence:  SOS this effortless sweatshirt features a round neck, long sleeves, a relaxed fit and a central logo print EOS
+generated sentence: this sweatshirt features a central print design, a central print and a logo at the print EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.17647058823529413 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['silver', 'silver', 'fringed', 'ivory', 'cotton-blend', 'blazer', 'unique']
+original sentence:  SOS 1 phillip lim uses silver UNK buttons and fringed pockets to give this ivory cotton-blend blazer a unique finish EOS
+generated sentence: this cotton-blend blazer is made from unique cotton-blend and silver and has a unique UNK and fringed design EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.10526315789473684 ; enrichment 0.631578947368421
+------------------------------------------------------
+the keywords used:  ['peter', 'crepe', 'dress']
+original sentence:  SOS peter UNK brilliant patterns are at the UNK of UNK so update your wardrobe with this UNK crepe dress EOS
+generated sentence: dress UNK a UNK of UNK and UNK this crepe dress is a UNK EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.06666666666666667 ; enrichment 0.8
+------------------------------------------------------
+the keywords used:  ['slingback', 'signature', 'butterfly', 'embroidery', 'embroidery', 'embroidery']
+original sentence:  SOS UNK slingback pumps combine the brand's signature butterfly embroidery with this season's UNK silhouette EOS
+generated sentence: this UNK slingback pair is designed with a butterfly slingback and slingback silhouette and butterfly EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.1875 ; enrichment 0.6875
+------------------------------------------------------
+the keywords used:  ['delpozo', 'embroidered', 'tulle', 'top', 'tulle', 'overlay', 'floral']
+original sentence:  SOS this delpozo embroidered tulle top features a sleeveless silhouette with a tulle overlay with floral embellishments EOS
+generated sentence: this floral top features a tulle overlay a a UNK floral embroidered with a UNK and floral overlay EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.15789473684210525 ; enrichment 0.5789473684210527
+------------------------------------------------------
+the keywords used:  ['crafted', 'blue', 'sweater', 'long', 'ribbed', 'hem', 'hem']
+original sentence:  SOS crafted from blue cashmere, this sweater features a crew neck, long sleeves and a ribbed hem and cuffs EOS
+generated sentence: crafted from a blue wool-cashmere blend, this sweater features a ribbed hem and a ribbed hem and cuffs EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.10526315789473684 ; enrichment 0.631578947368421
+------------------------------------------------------
+the keywords used:  ['handmade', '18-karat', 'bracelet', 'delicate', 'pendant', 'block']
+original sentence:  SOS " this handmade 18-karat gold bracelet features a delicate pendant that UNK out UNK in block lettering EOS
+generated sentence: handmade from 18-karat gold, this bracelet has a block pendant that's set with 0 EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.0 ; enrichment 0.6666666666666666
+------------------------------------------------------
+the keywords used:  ['leather', 'necklace', 'abstract', 'pendant', 'crafted', 'sleek']
+original sentence:  SOS this leather necklace features an abstract pendant crafted from lustrous brass with a sleek UNK center EOS
+generated sentence: this UNK leather necklace is finished with a sleek abstract pendant and crafted in a abstract pattern EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.05555555555555555 ; enrichment 0.6111111111111112
+------------------------------------------------------
+the keywords used:  ['roll', 'neck', 'sweater', 'season']
+original sentence:  SOS rick owens roll neck sweater rick owens specializes in avant-garde silhouettes in muted colour palettes this season EOS
+generated sentence: rick owens roll sweater rick owens specializes in avant-garde silhouettes in muted colour palettes this season EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.0 ; enrichment 0.8235294117647058
+------------------------------------------------------
+the keywords used:  ['luxe', 'jersey', 'drawstring', 'pant', 'waist', 'relaxed', 'fit']
+original sentence:  SOS this UNK m'o exclusive luxe jersey drawstring pant features a UNK waist and relaxed fit EOS
+generated sentence: this relaxed fit is UNK jersey with a luxe jersey waist and UNK jersey pant drawstring EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.47058823529411764
+------------------------------------------------------
+the keywords used:  ['soft', 'triangle', 'cut', 'black', 'floral', 'hardware']
+original sentence:  SOS designed with soft triangle UNK this style is cut from black floral UNK and finished with gilded hardware EOS
+generated sentence: made from black UNK this soft pair is cut from soft UNK and has a soft hardware EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.6666666666666666
+------------------------------------------------------
+the keywords used:  ['versace', 'stylish', 'modern', 'everyday', 'wear', 'skinny', 'fit']
+original sentence:  SOS versace present a stylish addition to the modern UNK everyday wear with these skinny fit trousers EOS
+generated sentence: wear these everyday fit with skinny jeans and a stylish fit for an stylish fit EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.1875 ; enrichment 0.5
+------------------------------------------------------
+the keywords used:  ['sander', 'midi', 'midi', 'eyelet', 'knit', 'skirt', 'pencil', 'high', 'flared', 'hem']
+original sentence:  SOS this jil sander midi eyelet knit skirt features a pencil silhouette with a high rise and slightly flared hem EOS
+generated sentence: this jil sander UNK flared skirt features a midi hem with a high rise and flared hem EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.5555555555555556
+------------------------------------------------------
+the keywords used:  ['crafted', 'piece', 'gold-tone', 'drawstring', 'pocket', 'lining']
+original sentence:  SOS crafted from patent-leather, this piece features gold-tone hardware, a drawstring fastening, an internal zipped pocket and a canvas lining EOS
+generated sentence: pocket in italy, this piece features a drawstring fastening, a drawstring lining and a UNK pocket EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['accessory', 'staple', 'ring', 'engraved', 'logo', 'logo']
+original sentence:  SOS an accessory staple from the aw18 collection, this signet split ring features an internal engraved logo EOS
+generated sentence: this compact accessory is a staple accessory and features a logo engraved a UNK engraved logo EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.17647058823529413 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['printed', 'cape', 'etro', 'length', 'asymmetric']
+original sentence:  SOS this multicoloured wool-silk blend printed cape from etro features a v-neck, three-quarter length sleeves and an asymmetric style EOS
+generated sentence: this multicoloured UNK blend printed cape from etro features a asymmetric style and an asymmetric style EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7058823529411765
+------------------------------------------------------
+the keywords used:  ['green', 'bag', 'givenchy', 'accessory']
+original sentence:  SOS capturing the brand’s UNK aesthetic, this UNK green UNK crossbody bag from givenchy is UNK a must-have accessory EOS
+generated sentence: this green UNK saddle bag from givenchy is the accessory is a UNK of your UNK EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.0 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['padded', 'coat', 'fur', 'quilted', 'side']
+original sentence:  SOS this UNK padded coat features a fox fur trim, a quilted effect, side pockets and a mid-length EOS
+generated sentence: this UNK coat features a quilted a UNK a padded print, and a quilted side EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.0625 ; enrichment 0.6875
+------------------------------------------------------
+the keywords used:  ['pointed', 'wearable', 'low', 'stiletto', 'heel', 'heel']
+original sentence:  SOS these UNK pumps also feature a pointed toe, a branded insole and a wearable low stiletto heel EOS
+generated sentence: these UNK pumps feature a pointed toe, a pointed toe, a low heel and an almond toe, EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.05555555555555555 ; enrichment 0.7777777777777778
+------------------------------------------------------
+the keywords used:  ['tote', 'woven', 'atelier', 'textured', 'leather']
+original sentence:  SOS impeccably made in UNK this UNK tote has been woven at a UNK atelier from textured leather EOS
+generated sentence: this UNK tote is woven in UNK leather and is detailed with a UNK atelier EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.0 ; enrichment 0.75
+------------------------------------------------------
+the keywords used:  ['cropped', 'printed', 'leather', 'jacket', 'cool', 'chic']
+original sentence:  SOS team this cropped style with a printed blouse and leather jacket to put a cool slant on UNK chic EOS
+generated sentence: team this cropped pair with a printed jacket and leather jacket for a chic cool look EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['wear', 'mid-rise', 'sweater']
+original sentence:  SOS wear this mid-rise style with a nude sweater and add a touch of tough with buckle-fastening shoes EOS
+generated sentence: mid-rise this UNK style over a UNK blouse and step out to complete a UNK look EOS
+keywords_coverage:  0.3333333333333333 ; keywords_repetition_rate:  0.0 ; enrichment 0.9411764705882353
+------------------------------------------------------
+the keywords used:  ['scarf', 'silk-twill', 'signature', 'check']
+original sentence:  SOS this scarf is made from languid silk-twill and features the label's signature check motif outlined with UNK flowers EOS
+generated sentence: this UNK scarf is made from a UNK and has a signature UNK check and UNK EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.0 ; enrichment 0.8235294117647058
+------------------------------------------------------
+the keywords used:  ['midi', 'midi', 'skirt', 'italy', 'stretch-denim', 'decorated', 'pop', 'white']
+original sentence:  SOS this midi skirt has been made in italy from stretch-denim decorated with pop UNK white UNK EOS
+generated sentence: this stretch-denim skirt has been made in white stretch-denim in pop of pop with white pop EOS
+keywords_coverage:  0.5714285714285714 ; keywords_repetition_rate:  0.23529411764705882 ; enrichment 0.5294117647058824
+------------------------------------------------------
+the keywords used:  ['wear', 'chic', 'wrap', 'wrap', 'dress', 'city']
+original sentence:  SOS wear this chic style with a wrap dress and gilded beads for a UNK city look EOS
+generated sentence: wrap this chic style over a wear dress to wear it with a UNK dress to wear EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.16666666666666666 ; enrichment 0.6111111111111112
+------------------------------------------------------
+the keywords used:  ['handcrafted', 'olive', 'leather', 'piece', 'printed', 'dress', 'suede', 'channel', 'sophisticated', 'aesthetic']
+original sentence:  SOS team this handcrafted olive leather piece with a printed dress and suede boots to channel a sophisticated '70s aesthetic EOS
+generated sentence: olive UNK aesthetic with olive suede dress and suede suede dress to channel the brand's sophisticated aesthetic EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.2777777777777778 ; enrichment 0.3888888888888889
+------------------------------------------------------
+the keywords used:  ['slouchy', 'shoulder', 'day', 'oversized', 'oversized', 'clutch', 'evening', 'date']
+original sentence:  SOS carry this slouchy style on your shoulder by day and UNK the oversized clutch for an evening dinner date EOS
+generated sentence: team this oversized shoulder pair with a slouchy clutch and shoulder boots for a date day to evening EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.05263157894736842 ; enrichment 0.5789473684210527
+------------------------------------------------------
+the keywords used:  ['metallic', 'metallic', 'metallic', 'coat', 'metallic', 'metallic', 'metallic', 'textured']
+original sentence:  SOS this *rebecca de ravenel * metallic UNK coat features a collarless UNK and metallic textured effect EOS
+generated sentence: UNK this textured coat with a textured textured coat and a textured way to metallic for EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.23529411764705882 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['leather', 'belted', 'straight', 'pant', 'straight', 'leg', 'pant']
+original sentence:  SOS proenza schouler leather belted straight pant a tough edge is given to this straight leg pant EOS
+generated sentence: this UNK straight leather pant features a straight leg a pant a straight leg and a leg EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.2777777777777778 ; enrichment 0.5
+------------------------------------------------------
+the keywords used:  ['silver', 'silver', 'wide', 'loose', 'loose', 'midi', 'midi', 'length']
+original sentence:  SOS this cucculelli shaheen silver UNK features wide UNK sleeves with a v-neckline and a loose midi length silhouette EOS
+generated sentence: this UNK midi style has a midi length and a midi length a length a length EOS
+keywords_coverage:  0.4 ; keywords_repetition_rate:  0.29411764705882354 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['drawstring', 'skirt', 'season']
+original sentence:  SOS rick owens drkshdw drawstring skirt rick owens specializes in avant-garde silhouettes in muted colour palettes this season EOS
+generated sentence: rick owens drkshdw drawstring skirt rick owens specializes in avant-garde silhouettes in muted colour palettes this season EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.0 ; enrichment 0.8333333333333334
+------------------------------------------------------
+the keywords used:  ['wear', 'blazer', 'evening', 'city', 'chic']
+original sentence:  SOS wear this UNK runway style with a mannish blazer and glossy pumps for an evening take on city chic EOS
+generated sentence: chic this UNK blazer to the city look with a chic alternative to evening UNK EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.0625 ; enrichment 0.6875
+------------------------------------------------------
+the keywords used:  ['wear', 'mary', 'neutral', 'dress', 'bare']
+original sentence:  SOS wear this mary UNK pair as the focus of your look with a neutral dress and bare legs EOS
+generated sentence: neutral and bare legs and mary UNK this mary UNK will seamlessly is bare without UNK EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.7058823529411765
+------------------------------------------------------
+the keywords used:  ['used', 'craft', 'sweater', 'virgin', 'wool']
+original sentence:  SOS he used its artisans to craft this UNK sweater from virgin wool to last you a UNK EOS
+generated sentence: UNK sweater is a used style that wraps used styles, like this wool sweater is made from virgin wool EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.15 ; enrichment 0.65
+------------------------------------------------------
+the keywords used:  ['michael', 'minimalism', 'minimalism', 'sleek', 'black', 'leather', 'clutch', 'sophisticated', 'evening', 'accessory']
+original sentence:  SOS michael kors UNK its trademark minimalism to this sleek black leather envelope clutch to create a sophisticated evening accessory EOS
+generated sentence: evening clutch this sophisticated accessory with michael michael kors' black clutch is a sleek evening accessory EOS
+keywords_coverage:  0.7777777777777778 ; keywords_repetition_rate:  0.23529411764705882 ; enrichment 0.35294117647058826
+------------------------------------------------------
+the keywords used:  ['crop', 'flare', 'pant', 'high', 'slip', 'straight', 'leg']
+original sentence:  SOS this UNK crop flare pant features a high waist, slip pockets and a straight leg EOS
+generated sentence: this alexis UNK crop pant features a high rise waistline with a slip and slip waistline and flare silhouette EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.05 ; enrichment 0.7
+------------------------------------------------------
+the keywords used:  ['delpozo', 'grosgrain', 'crepe', 'midi', 'midi', 'skirt', 'a-line', 'a-line', 'a-line', 'a-line']
+original sentence:  SOS this delpozo grosgrain crepe midi skirt features an a-line skirt with high-rise UNK waistline and a grosgrain embellished detail EOS
+generated sentence: this a-line skirt is made from UNK crepe and has a a-line a-line silhouette and a-line a-line midi skirt EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.25 ; enrichment 0.55
+------------------------------------------------------
+the keywords used:  ['leather', 'off-white', 'off-white', 'square', 'toe', 'low', 'block', 'heel', 'heel']
+original sentence:  SOS made from supple leather in an off-white hue, this pair has a square toe and comfortably low block heel EOS
+generated sentence: this pair is made from off-white leather and has a low heel and a low heel EOS
+keywords_coverage:  0.5714285714285714 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['essential', 'black', 'leather', 'buckle', 'belt', 'dolce', 'dolce', 'adjustable', 'fit', 'silver-tone']
+original sentence:  SOS this essential black leather buckle belt from dolce & gabbana features an adjustable fit and a silver-tone buckle EOS
+generated sentence: this silver-tone fit dolce leather belt from dolce & gabbana features an adjustable silver-tone fit and silver-tone silver-tone black EOS
+keywords_coverage:  0.7777777777777778 ; keywords_repetition_rate:  0.25 ; enrichment 0.4
+------------------------------------------------------
+the keywords used:  ['beautiful', 'jacket', 'elegant', 'day', 'night']
+original sentence:  SOS the beautiful UNK of this jacket will add an elegant touch to any day or night ensemble EOS
+generated sentence: this night jacket is a night - UNK the beautiful night to night night with night EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.29411764705882354 ; enrichment 0.5294117647058824
+------------------------------------------------------
+the keywords used:  ['cotton', 'sweatshirt', 'printed', 'blush', 'blue', 'embroidered', 'silver', 'silver']
+original sentence:  SOS this UNK cotton sweatshirt is printed with a trio of blush and blue UNK embroidered with silver UNK EOS
+generated sentence: this blue silver embroidered embroidered blue embroidered sweatshirt features a embroidered UNK and printed with a UNK EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.2222222222222222 ; enrichment 0.5
+------------------------------------------------------
+the keywords used:  ['printed', 'floral', 'butterfly', 'satin', 'bomber', 'jacket', 'spring']
+original sentence:  SOS printed with this season's floral and butterfly motif, givenchy's satin bomber jacket is our hero UNK for spring EOS
+generated sentence: this UNK jacket features a satin jacket with a spring printed and spring printed spring EOS
+keywords_coverage:  0.5714285714285714 ; keywords_repetition_rate:  0.25 ; enrichment 0.5
+------------------------------------------------------
+the keywords used:  ['cotton', 't-shirt', 'diesel', 'straight', 'hem', 'hem']
+original sentence:  SOS this grey cotton washed t-shirt from diesel features a crew neck, a UNK effect and a straight hem EOS
+generated sentence: this grey cotton UNK t-shirt from diesel features a straight fit, a crew neck, a sleeveless design EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.0 ; enrichment 0.7777777777777778
+------------------------------------------------------
+the keywords used:  ['black', 'white', 'cuff', 'bracelet', 'italy']
+original sentence:  SOS this UNK black and white vltn cuff bracelet has been expertly constructed in italy from brass EOS
+generated sentence: this white and white bracelet has been made in UNK from the designer's UNK in UNK EOS
+keywords_coverage:  0.4 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.8235294117647058
+------------------------------------------------------
+the keywords used:  ['cool', 'kenzo', 'embroidered', 'sweatshirt', 'ribbed', 'neck', 'long']
+original sentence:  SOS constructed from back cotton, this cool by kenzo embroidered sweatshirt features a ribbed crew neck and long sleeves EOS
+generated sentence: this kenzo neck ribbed neck sweatshirt features a crew neck, long sleeves, a long neck and embroidered design EOS
+keywords_coverage:  0.8571428571428571 ; keywords_repetition_rate:  0.15789473684210525 ; enrichment 0.5263157894736842
+------------------------------------------------------
+the keywords used:  ['wear', 'chic', 'tailored', 'office']
+original sentence:  SOS wear this chic separate with a UNK tailored pants and gladiator sandals for UNK office style EOS
+generated sentence: wear this chic style with a tailored blouse and heels for a chic look for a chic EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.7222222222222222
+------------------------------------------------------
+the keywords used:  ['black', 'round', 'flat', 'rubber', 'sole', 'gold-tone', 'hardware']
+original sentence:  SOS made from black leather, these sneakers have a round toe, a flat rubber sole and gold-tone hardware EOS
+generated sentence: these gold-tone flat pumps from gold-tone UNK feature a round toe, a gold-tone rubber sole and rubber details EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.15789473684210525 ; enrichment 0.5789473684210527
+------------------------------------------------------
+the keywords used:  ['isabel', 'signature', 'parisian', 'black', 'cotton', 'skirt', 'cream', 'circle', 'star', 'print']
+original sentence:  SOS étoile isabel marant adds signature parisian flair to this black cotton skirt with a cream circle and star print EOS
+generated sentence: this black star and star print skirt is made from a star print and UNK star print EOS
+keywords_coverage:  0.4 ; keywords_repetition_rate:  0.2777777777777778 ; enrichment 0.5
+------------------------------------------------------
+the keywords used:  ['white', 'leather', 'slim', 'block', 'heel', 'heel']
+original sentence:  SOS this italian-made white leather pair is designed with two slim straps and a UNK block heel EOS
+generated sentence: made from supple leather, these leather pair have a slim block heel and is set on a
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.0 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['stella', 'felt', 'hardware', 'slight', 'heel', 'heel']
+original sentence:  SOS this stella UNK is rendered in felt fabric and features gold hardware and slight heel EOS
+generated sentence: this felt marant features a UNK and UNK hardware and a slight hardware and slight hardware EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.17647058823529413 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['wear', 'oversized', 'oversized', 'tapered', 'silk', 'shirt', 'workwear', 'twist']
+original sentence:  SOS wear this oversized style with tapered pants and a silk shirt to give workwear a directional twist EOS
+generated sentence: workwear this twist on with oversized pants and a tapered silk shirt for a tapered workwear look EOS
+keywords_coverage:  0.8571428571428571 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.5555555555555556
+------------------------------------------------------
+the keywords used:  ['crafted', 'silk', 'beautiful', 'blazer', 'givenchy', 'essential']
+original sentence:  SOS crafted from a blend of silk and wool, this beautiful blazer from givenchy is a wardrobe essential EOS
+generated sentence: givenchy is UNK this beautiful silk crafted blazer is a beautiful way to beautiful UNK beautiful UNK EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.16666666666666666 ; enrichment 0.5555555555555556
+------------------------------------------------------
+the keywords used:  ['work', 'new', 'staple', 'sharp', 'sharp', 'pencil', 'skirt']
+original sentence:  SOS work the new fashion UNK by contrasting this UNK staple with a sharp pencil skirt and heels EOS
+generated sentence: work the new york skirt with this pencil skirt from the new to show tailoring after new EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.16666666666666666 ; enrichment 0.6111111111111112
+------------------------------------------------------
+the keywords used:  ['crafted', 'printed', 't-shirt', 'round', 'short', 'slim', 'fit', 'straight', 'hem', 'hem']
+original sentence:  SOS crafted from cotton, this printed t-shirt features a round neck, short sleeves, a slim fit and a straight hem EOS
+generated sentence: crafted from cotton, this printed t-shirt features a slim fit, a slim fit and a slim hem EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.5555555555555556
+------------------------------------------------------
+the keywords used:  ['18-karat', 'rose', 'necklace', 'line', 'line']
+original sentence:  SOS cast from 18-karat rose gold, this necklace features a pure line of UNK diamonds totaling 0 EOS
+generated sentence: cast from gleaming line gold, this necklace is strung with a UNK line of UNK diamonds EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.8235294117647058
+------------------------------------------------------
+the keywords used:  ['handmade', 'wrap', 'wrap', 'leather', 'side']
+original sentence:  SOS handmade from UNK this UNK has a wrap silhouette that UNK with leather ties at the side EOS
+generated sentence: this leather pair has a UNK wrap silhouette that's accentuated by a UNK side splits and UNK EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.0 ; enrichment 0.8333333333333334
+------------------------------------------------------
+the keywords used:  ['handmade', '18-karat', 'necklace', 'pendant', 'star']
+original sentence:  SOS " handmade from 18-karat gold, this necklace has a carved UNK pendant that's centered with a diamond-encrusted star motif EOS
+generated sentence: handmade from 18-karat gold, this necklace has a star pendant that's encrusted with 0 EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.0 ; enrichment 0.6666666666666666
+------------------------------------------------------
+the keywords used:  ['crafted', 'italy', 'soft', 'cotton', 'striking', 'shirt', 'jacket', 'ideal', 'spring', 'wear']
+original sentence:  SOS crafted in italy from a soft cotton blend, this striking shirt jacket is ideal for spring wear EOS
+generated sentence: soft and wear this striking pair is ideal for spring wear and wear with a spring wear EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.2222222222222222 ; enrichment 0.5
+------------------------------------------------------
+the keywords used:  ['handmade', 'piece', 'jewelry']
+original sentence:  SOS handmade from 18 UNK gold UNK this highly covetable piece of jewelry would make a UNK gift EOS
+generated sentence: jewelry is a piece to carry your essentials in your UNK of this season's UNK jewelry EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.8235294117647058
+------------------------------------------------------
+the keywords used:  ['bag', 'perfect', 'day', 'night']
+original sentence:  SOS this bag boasts a timeless design and is perfect to take your essentials from day to night EOS
+generated sentence: this UNK bag is the perfect UNK to the perfect UNK of the UNK of day EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['sparkling', 'sparkling', 'sand', 'wrap', 'wrap', 'skirt', 'layered', 'silk', 'organza', 'hem']
+original sentence:  SOS this johanna ortiz sparkling sand wrap skirt features layered silk organza detailing and an asymmetrical hem EOS
+generated sentence: this layered silk skirt has a silk layered and layered hem and layered silk layered hem silk hem EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.47368421052631576 ; enrichment 0.3157894736842105
+------------------------------------------------------
+the keywords used:  ['msgm', 'sweatshirt', 'logo', 'logo']
+original sentence:  SOS this msgm fringe back sweatshirt features a crewneck neckline, a back fringe details, a back logo EOS
+generated sentence: this sweatshirt features a UNK design, a UNK design, a logo and a UNK logo detail EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.8235294117647058
+------------------------------------------------------
+the keywords used:  ['wide', 'leg', 'high-rise', 'front', 'patch', 'pleated', 'front']
+original sentence:  SOS this UNK wide leg pants features a high-rise with two front patch pockets and a pleated front EOS
+generated sentence: this UNK front pleated patch trouser features a wide lapel, front leg and front pockets and front pockets EOS
+keywords_coverage:  0.8333333333333334 ; keywords_repetition_rate:  0.15789473684210525 ; enrichment 0.5789473684210527
+------------------------------------------------------
+the keywords used:  ['detachable', 'oversized', 'oversized', 'clutch', 'bag', 'perfect', 'evening']
+original sentence:  SOS UNK the detachable straps to tap into this season's must-have oversized clutch bag - perfect for the evening EOS
+generated sentence: this UNK evening bag is a perfect detachable evening - perfect for UNK or bag EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.1875 ; enrichment 0.5625
+------------------------------------------------------
+the keywords used:  ['piece', 'ruffled', 'smocked', 'soft']
+original sentence:  SOS this piece is ruffled across the shoulders and has smocked cuffs that create soft volume through the sleeves EOS
+generated sentence: this UNK piece has a soft UNK and piece with smocked cuffs that UNK the UNK EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['fresh', 'black', 'jacket', 'practical', 'stylish', 'outerwear', 'outerwear']
+original sentence:  SOS fresh from the autumn/winter 2018 lineup, this black UNK jacket is a practical and perennially stylish outerwear option EOS
+generated sentence: this stylish outerwear outerwear UNK style will make a stylish outerwear option to your outerwear wardrobe EOS
+keywords_coverage:  0.3333333333333333 ; keywords_repetition_rate:  0.23529411764705882 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['crafted', 'rochas', 'knit', 'length', 'logo', 'logo', 'bodice']
+original sentence:  SOS crafted in cashmere, this rochas knit features a crew neckline, full length sleeves, and a logo at the bodice EOS
+generated sentence: crafted from wool, this logo bodice features a bodice with a logo bodice and a logo bodice EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.2777777777777778 ; enrichment 0.5555555555555556
+------------------------------------------------------
+the keywords used:  ['black', 'cotton', 'fitted', 'neck', 't-shirt', 'latest', 'central', 'printed', 'logo', 'logo']
+original sentence:  SOS this black cotton fitted crew neck t-shirt from the latest collection features a central printed logo and short sleeves EOS
+generated sentence: this printed logo printed t-shirt from from the central printed printed with a latest and latest EOS
+keywords_coverage:  0.5555555555555556 ; keywords_repetition_rate:  0.23529411764705882 ; enrichment 0.47058823529411764
+------------------------------------------------------
+the keywords used:  ['wear', 'lightweight', 'loose', 'loose', 'tee', 'relaxed']
+original sentence:  SOS wear this lightweight style with a loose tee and UNK pants for a relaxed off-duty look EOS
+generated sentence: wear this relaxed style with a relaxed tee and relaxed jeans for a relaxed relaxed to UNK EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.2222222222222222 ; enrichment 0.6111111111111112
+------------------------------------------------------
+the keywords used:  ['spotted', 'shirt', 'striped', 'cotton-poplin', 'red', 'pointed', 'collar', 'collar']
+original sentence:  SOS spotted on the runway, this shirt is made from striped cotton-poplin and has a contrasting red pointed collar EOS
+generated sentence: shirt is this red cotton-poplin pointed shirt is finished with a red shirt and UNK red collar EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.2222222222222222 ; enrichment 0.5
+------------------------------------------------------
+the keywords used:  ['coat', 'faux', 'patent-leather', 'oversized', 'oversized', 'collar', 'collar']
+original sentence:  SOS this UNK coat is designed with faux patent-leather UNK stripes and an oversized collar tab EOS
+generated sentence: this UNK faux coat is made from patent-leather and has a collar and collar and collar EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['jonathan', 'wool', 'jacket', 'embroidered', 'flared']
+original sentence:  SOS this jonathan simkhai wool UNK jacket features a v neckline, embroidered details, and a flared silhouette EOS
+generated sentence: this jonathan simkhai embroidered flared jacket features a UNK neckline, embroidered detail and a UNK detail EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7058823529411765
+------------------------------------------------------
+the keywords used:  ['black', 'virgin', 'wool', 'silk', 'sweater', 'green', 'roll', 'long', 'relaxed', 'fit']
+original sentence:  SOS this black virgin wool and silk sweater features green cuffs, a roll neck, long sleeves and a relaxed fit EOS
+generated sentence: this green silk fit sweater has a relaxed fit and fit and long and relaxed sleeves fit EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.2222222222222222 ; enrichment 0.4444444444444444
+------------------------------------------------------
+the keywords used:  ['wear', 'subtle', 'luxe', 'denim', 'high-waisted']
+original sentence:  SOS wear this subtle luxe style with everything from off-duty denim and sneakers to high-waisted pants and heels EOS
+generated sentence: wear this luxe style with subtle denim and luxe heels for a UNK look with UNK EOS
+keywords_coverage:  0.8 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7058823529411765
+------------------------------------------------------
+the keywords used:  ['wear', 'piece', 'beige', 'mini', 'skirt', 'rabbit', 'gilet', 'layered']
+original sentence:  SOS wear this tactile piece with a beige mini skirt and a rabbit gilet for a luxurious layered look EOS
+generated sentence: wear this UNK piece with a layered beige gilet and layered gilet to wear the look with a UNK EOS
+keywords_coverage:  0.625 ; keywords_repetition_rate:  0.15 ; enrichment 0.6
+------------------------------------------------------
+the keywords used:  ['exotic', 'multicolored', 'python', 'clutch']
+original sentence:  SOS bring every after-dark look to an exotic finish with this multicolored python clutch from UNK EOS
+generated sentence: UNK python UNK and UNK this python pair will exotic appeal to your favorite exotic appeal EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['maison', 'belt', 'crafted', 'wide', 'closure', 'closure']
+original sentence:  SOS this maison UNK belt is crafted in a wide UNK with a UNK design and single UNK closure EOS
+generated sentence: this closure UNK belt is crafted in a UNK silhouette with a UNK belt and a UNK belt EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.10526315789473684 ; enrichment 0.7368421052631579
+------------------------------------------------------
+the keywords used:  ['yellow', 'feather', 'gown', 'ball']
+original sentence:  SOS this UNK yellow UNK feather trimmed gown ensures you will emulate UNK and be the beauty of the ball EOS
+generated sentence: this UNK yellow UNK feather gown features a ball feather style with a UNK and ball detail EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.1111111111111111 ; enrichment 0.6666666666666666
+------------------------------------------------------
+the keywords used:  ['cut', 'black', 'bomber', 'jacket']
+original sentence:  SOS cut from lustrous black shell, this bomber jacket is detailed with UNK canvas straps and buckles EOS
+generated sentence: cut from a UNK this black jacket has a UNK cut of a UNK and UNK EOS
+keywords_coverage:  0.75 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['denim', 'skirt', 'a-line', 'a-line', 'a-line', 'a-line']
+original sentence:  SOS UNK my UNK denim skirt i was never UNK to UNK she says of this a-line style EOS
+generated sentence: this UNK denim skirt is designed with a UNK a-line silhouette that hits just above the a-line EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.05555555555555555 ; enrichment 0.7777777777777778
+------------------------------------------------------
+the keywords used:  ['wear', 'mini', 'dress', 'metallic', 'metallic', 'metallic', 'clutch', 'striking', 'cocktail']
+original sentence:  SOS wear this runway style with a UNK mini dress and metallic clutch for a striking cocktail look EOS
+generated sentence: wear this striking mini dress with a striking dress and striking heels for a striking cocktail look EOS
+keywords_coverage:  0.7142857142857143 ; keywords_repetition_rate:  0.2222222222222222 ; enrichment 0.5
+------------------------------------------------------
+the keywords used:  ['exotic', 'amethyst', 'necklace']
+original sentence:  SOS UNK exotic UNK of gold UNK and amethyst makes this necklace an instant ensemble UNK EOS
+generated sentence: emulate the exotic amethyst of the label's UNK this UNK necklace is a exotic example of the UNK EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.05263157894736842 ; enrichment 0.7894736842105263
+------------------------------------------------------
+the keywords used:  ['cut', 'loose', 'loose', 'cotton-poplin', 'shirt', 'pleated', 'hem', 'hem']
+original sentence:  SOS cut for a loose fit, this cotton-poplin shirt is pleated through the back and has a dipped hem EOS
+generated sentence: pleated from a loose silhouette, this UNK hem is made from pleated hem and a hem EOS
+keywords_coverage:  0.5 ; keywords_repetition_rate:  0.17647058823529413 ; enrichment 0.6470588235294118
+------------------------------------------------------
+the keywords used:  ['crafted', 'stylish', 'ring', 'ideal', 'textured', 'engraved']
+original sentence:  SOS crafted in italy, this stylish ring is ideal for UNK featuring a textured style and an engraved design EOS
+generated sentence: ideal for a stylish UNK this UNK textured ring is crafted with a textured engraved design EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.5882352941176471
+------------------------------------------------------
+the keywords used:  ['playful', 'accessory', 'signature', 'bag', 'cardholder']
+original sentence:  SOS this UNK add a playful vibe to your accessory collection with fendi's signature bag bugs cardholder EOS
+generated sentence: carry this signature accessory with a playful bag and a UNK cardholder to carry your essentials EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.0 ; enrichment 0.7058823529411765
+------------------------------------------------------
+the keywords used:  ['rich', 'bag', 'fine']
+original sentence:  SOS spliced in a palette of rich UNK this timeless bag is a fine UNK for any outfit EOS
+generated sentence: this rich UNK bag is rendered in UNK and features a fine UNK and fine UNK EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['pointed', 'gold-tone', 'studded', 'ankle', 'ankle', 'ankle', 'strap']
+original sentence:  SOS these pumps have a pointed toe, with a branded insole and an gold-tone studded ankle strap EOS
+generated sentence: these ankle boots feature a pointed toe, a pointed toe, a branded insole, a pointed UNK ankle strap EOS
+keywords_coverage:  0.6 ; keywords_repetition_rate:  0.15789473684210525 ; enrichment 0.6842105263157895
+------------------------------------------------------
+the keywords used:  ['handmade', 'brooch', 'curved', 'bar']
+original sentence:  SOS handmade at the label's studio, this brooch is UNK named UNK after its curved 9-karat gold bar EOS
+generated sentence: handmade from UNK this handmade design has a curved UNK brooch and UNK bar UNK EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.0625 ; enrichment 0.6875
+------------------------------------------------------
+the keywords used:  ['longer', 'wear', 'cinch', 'cinch', 'oversized', 'oversized']
+original sentence:  SOS this season, UNK are no longer UNK for jeans - wear them to cinch jackets and oversized shirts EOS
+generated sentence: wear this oversized style to cinch in the oversized style to add a longer UNK to let this style EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.05 ; enrichment 0.75
+------------------------------------------------------
+the keywords used:  ['piece', 'cool', 'high-rise']
+original sentence:  SOS best tempered with UNK this piece looks so cool styled with a pair of high-rise pants EOS
+generated sentence: this high-rise style is made from UNK and has a UNK cool and cool UNK high-rise EOS
+keywords_coverage:  0.6666666666666666 ; keywords_repetition_rate:  0.11764705882352941 ; enrichment 0.7647058823529411
+------------------------------------------------------
+the keywords used:  ['cuff', 'crafted', 'polished', '18-karat', 'rose']
+original sentence:  SOS this dainty UNK cuff is crafted from polished 18-karat rose gold and expertly set with 0 EOS
+generated sentence: this 18-karat UNK cuff is crafted from polished rose gold and set with a UNK polished EOS
+keywords_coverage:  1.0 ; keywords_repetition_rate:  0.058823529411764705 ; enrichment 0.6470588235294118
+------------------------------------------------------
+153 tests ran
+total average loss:  9811.010620915033
+total_average_keywords_coverage:  0.72j96296296296292
+total_average_keywords_repetition_rate:  0.1285294848360166
+total_average_enrichment 0.6448961094585752
