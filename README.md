@@ -9,15 +9,15 @@ We used python 3.5, pytorch 0.4.1, tqdm 4.26.0, so make sure these packages are 
 
 ### Run code
 To train the model, simply run
-'''
+```
 python train.py
-'''
+```
 model will be saved to cumulative_attention/models/ file after every epoch 
 
 To run test and redirct ouput to a result file in cumulative_attention/results/ folder, run
-'''
+```
 python test.py > cumulative_attention/results/[result file name]
-'''
+```
 
 The model type can be changed inside both train.py and test.py
 
